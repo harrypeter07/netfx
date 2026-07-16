@@ -11,15 +11,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+// Hero slideshow pool — the 5 images + 2 videos the user explicitly selected
 const FEATURED_POOL = [
-  {
-    id: "evening_party_black_lehenga",
-    title: "Wedding Festivities",
-    description: "Capturing the elegance and grandeur of wedding celebrations.",
-    image: "/gallery/evening_party_black_lehenga_1.jpeg",
-    year: "2024",
-    tag: "Featured Showcase"
-  },
   {
     id: "candid_home_pink_top",
     title: "Candid Home",
@@ -31,8 +24,32 @@ const FEATURED_POOL = [
   {
     id: "casual_outdoor_blue_kurti",
     title: "Casual Day Out",
-    description: "Stepping out to enjoy the daylight in vibrant, comfortable outfits.",
+    description: "Stepping out to enjoy the daylight in a vibrant printed kurti.",
     image: "/gallery/casual_outdoor_blue_kurti_2.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "festival_celebration_pink_saree",
+    title: "Festival Celebration",
+    description: "Draped in an exquisite pink saree, celebrating every festive moment.",
+    image: "/gallery/festival_celebration_pink_saree_1.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "garden_photoshoot_pink_saree",
+    title: "Garden Photoshoot",
+    description: "A beautiful afternoon among blooming flowers in a gorgeous pink saree.",
+    image: "/gallery/garden_photoshoot_pink_saree_1.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "casual_outdoor_red_kurta",
+    title: "Casual Outdoor",
+    description: "Effortlessly stylish in a bold red kurta against the open sky.",
+    image: "/gallery/casual_outdoor_red_kurta_1.jpeg",
     year: "2025",
     tag: "Featured Showcase"
   },
@@ -54,13 +71,12 @@ const FEATURED_POOL = [
   }
 ];
 
-// Interleave videos into an image list at every 2nd or 3rd position
+// Interleave videos into an image list at every 2nd position
 function interleaveVideos(imageItems: MediaItem[], videoItems: MediaItem[]): MediaItem[] {
   const result: MediaItem[] = [];
   let videoIdx = 0;
   for (let i = 0; i < imageItems.length; i++) {
     result.push(imageItems[i]);
-    // Insert a video after every 2 images
     if ((i + 1) % 2 === 0 && videoIdx < videoItems.length) {
       result.push(videoItems[videoIdx]);
       videoIdx++;
@@ -85,7 +101,7 @@ function Index() {
     image: resolveUrl(rawFeatured.image)
   };
 
-  // Rotate images every 3 seconds; videos advance on end
+  // Rotate images every 3 seconds; videos advance on video end
   useEffect(() => {
     if (activeFeatured.image.endsWith(".mp4")) return;
     const timer = setTimeout(nextFeatured, 3000);
@@ -128,11 +144,10 @@ function Index() {
   const interleavedMedia = interleaveVideos(allImages, allVideos);
 
   // Chunk into rows of 5
-  const rows: { title: string; items: MediaItem[] }[] = [];
+  const rows: { title: string; items: MediaItem[]; offset: number }[] = [];
   for (let i = 0; i < interleavedMedia.length; i += 5) {
     const chunk = interleavedMedia.slice(i, i + 5);
-    const rowNum = rows.length + 1;
-    rows.push({ title: `Gallery · Row ${rowNum}`, items: chunk });
+    rows.push({ title: `Gallery · Row ${rows.length + 1}`, items: chunk, offset: i });
   }
 
   return (
@@ -146,15 +161,15 @@ function Index() {
           onVideoEnded={nextFeatured}
         />
 
-        {/* Rows sit directly below the hero with no gap */}
+        {/* Card rows sit directly below the hero */}
         <div className="relative z-20 bg-[#141414] pb-20">
-          {rows.map((row, idx) => (
+          {rows.map((row) => (
             <Row
-              key={idx}
+              key={row.offset}
               title={row.title}
               items={row.items}
               layout="portrait"
-              onOpenCard={(cardIdx) => openItem(row.title, interleavedMedia, i_offset(rows, idx) + cardIdx)}
+              onOpenCard={(cardIdx) => openItem(row.title, interleavedMedia, row.offset + cardIdx)}
               isMobile={isMobile}
             />
           ))}
@@ -170,9 +185,4 @@ function Index() {
       />
     </div>
   );
-}
-
-// Helper: calculate absolute offset of a row in the full interleaved array
-function i_offset(rows: { title: string; items: MediaItem[] }[], rowIdx: number): number {
-  return rows.slice(0, rowIdx).reduce((acc, r) => acc + r.items.length, 0);
 }
