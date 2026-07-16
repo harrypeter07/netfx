@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Row, useIsMobile } from "@/components/Row";
 import { Slideshow } from "@/components/Slideshow";
 import { Footer } from "@/components/Footer";
-import { getAlbums, resolveUrl, type GalleryItem } from "@/lib/gallery";
+import { getAlbums, resolveUrl, type GalleryItem, type MediaItem } from "@/lib/gallery";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -15,7 +15,7 @@ const FEATURED_POOL = [
   {
     id: "evening_party_black_lehenga",
     title: "Wedding Festivities",
-    description: "Capturing the elegance and grandeur of wedding celebrations, highlighting the beautiful traditional attire.",
+    description: "Capturing the elegance and grandeur of wedding celebrations.",
     image: "/gallery/evening_party_black_lehenga_1.jpeg",
     year: "2024",
     tag: "Featured Showcase"
@@ -31,7 +31,7 @@ const FEATURED_POOL = [
   {
     id: "casual_outdoor_blue_kurti",
     title: "Casual Day Out",
-    description: "Stepping out to enjoy the daylight in vibrant, simple, and comfortable outfits.",
+    description: "Stepping out to enjoy the daylight in vibrant, comfortable outfits.",
     image: "/gallery/casual_outdoor_blue_kurti_2.jpeg",
     year: "2025",
     tag: "Featured Showcase"
@@ -54,132 +54,110 @@ const FEATURED_POOL = [
   }
 ];
 
+// Interleave videos into an image list at every 2nd or 3rd position
+function interleaveVideos(imageItems: MediaItem[], videoItems: MediaItem[]): MediaItem[] {
+  const result: MediaItem[] = [];
+  let videoIdx = 0;
+  for (let i = 0; i < imageItems.length; i++) {
+    result.push(imageItems[i]);
+    // Insert a video after every 2 images
+    if ((i + 1) % 2 === 0 && videoIdx < videoItems.length) {
+      result.push(videoItems[videoIdx]);
+      videoIdx++;
+    }
+  }
+  return result;
+}
+
 function Index() {
   const albums = getAlbums();
   const isMobile = useIsMobile();
-  
-  // Pick a random featured item from the user's highlighted pool on mount
-  const [featured] = useState(() => {
-    const randomIndex = Math.floor(Math.random() * FEATURED_POOL.length);
-    const item = FEATURED_POOL[randomIndex];
-    return {
-      ...item,
-      image: resolveUrl(item.image)
-    };
-  });
 
   const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
-  const rawFeatured = FEATURED_POOL[currentFeaturedIndex];
-
-  // Resolve ImageKit URLs dynamically
-  const activeFeatured = {
-    ...rawFeatured,
-    image: resolveUrl(rawFeatured.image)
-  };
 
   const nextFeatured = () => {
     setCurrentFeaturedIndex((prev) => (prev + 1) % FEATURED_POOL.length);
   };
 
-  // Rotates images after 2 seconds (2000ms), wait for video ended for clips
-  useEffect(() => {
-    if (activeFeatured.image.endsWith(".mp4")) {
-      return;
-    }
-    const timer = setTimeout(() => {
-      nextFeatured();
-    }, 2000);
+  const rawFeatured = FEATURED_POOL[currentFeaturedIndex];
+  const activeFeatured = {
+    ...rawFeatured,
+    image: resolveUrl(rawFeatured.image)
+  };
 
+  // Rotate images every 3 seconds; videos advance on end
+  useEffect(() => {
+    if (activeFeatured.image.endsWith(".mp4")) return;
+    const timer = setTimeout(nextFeatured, 3000);
     return () => clearTimeout(timer);
-  }, [currentFeaturedIndex, activeFeatured.image]);
+  }, [currentFeaturedIndex]);
 
   const [openItemState, setOpenItemState] = useState<GalleryItem | null>(null);
   const [slideshowStartIndex, setSlideshowStartIndex] = useState(0);
 
-  const openItem = (occasion: GalleryItem, index: number) => {
-    setOpenItemState(occasion);
-    setSlideshowStartIndex(index);
+  const openItem = (rowTitle: string, rowItems: MediaItem[], startIndex: number) => {
+    setOpenItemState({
+      id: rowTitle.toLowerCase().replace(/[^a-z0-9]+/g, "_"),
+      title: rowTitle,
+      description: `${rowTitle} collection.`,
+      date: "2025",
+      aspect: "portrait",
+      image: rowItems[startIndex]?.url ?? "",
+      images: rowItems,
+      album: rowTitle
+    });
+    setSlideshowStartIndex(startIndex);
   };
 
   const openFeaturedSlideshow = () => {
-    const allMediaItems = albums.flatMap(a => a.items.flatMap(occ => occ.images));
-    const filename = activeFeatured.image.split("/").pop();
-    const matchIndex = allMediaItems.findIndex(img => img.url.endsWith(filename || ""));
-
-    if (matchIndex !== -1) {
-      // Find matching occasion
-      const matchingOcc = albums
-        .flatMap(a => a.items)
-        .find(occ => occ.images.some(img => img.url.endsWith(filename || "")));
-      if (matchingOcc) {
-        const idxInOcc = matchingOcc.images.findIndex(img => img.url.endsWith(filename || ""));
-        openItem(matchingOcc, idxInOcc !== -1 ? idxInOcc : 0);
-        return;
-      }
-    }
-
-    const first = albums[0]?.items[0];
-    if (first) {
-      openItem(first, 0);
-    }
+    const allItems = albums.flatMap(a => a.items.flatMap(occ => occ.images));
+    const filename = activeFeatured.image.split("/").pop() ?? "";
+    const matchIdx = allItems.findIndex(img => img.url.split("/").pop() === filename);
+    openItem("Featured Showcase", allItems, matchIdx >= 0 ? matchIdx : 0);
   };
 
-  // Extract all unique shoot occasion items across all category albums (except "recent" to avoid duplicates)
-  // Each occasion gets its own separate row, displaying its individual images/videos
-  const occasions = albums
-    .filter((a) => a.slug !== "recent")
-    .flatMap((a) => a.items);
+  // Build rows: gather all images and all videos from the database
+  const allImages: MediaItem[] = albums
+    .filter(a => a.slug !== "recent" && a.slug !== "videos")
+    .flatMap(a => a.items.flatMap(occ => occ.images));
+
+  const allVideos: MediaItem[] = (albums.find(a => a.slug === "videos")?.items ?? [])
+    .flatMap(occ => occ.images);
+
+  // Interleave: insert one video after every 2 images
+  const interleavedMedia = interleaveVideos(allImages, allVideos);
+
+  // Chunk into rows of 5
+  const rows: { title: string; items: MediaItem[] }[] = [];
+  for (let i = 0; i < interleavedMedia.length; i += 5) {
+    const chunk = interleavedMedia.slice(i, i + 5);
+    const rowNum = rows.length + 1;
+    rows.push({ title: `Gallery · Row ${rowNum}`, items: chunk });
+  }
 
   return (
-    <div className="min-h-screen bg-transparent text-foreground animate-fade-in relative">
-      {/* Global Fixed Background (autoplay loop muted video or image covering entire page) */}
-      <div className="fixed inset-0 -z-10 overflow-hidden bg-[#141414]">
-        {activeFeatured.image.endsWith(".mp4") ? (
-          <video
-            key={activeFeatured.image}
-            src={activeFeatured.image}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <img
-            key={activeFeatured.image}
-            src={activeFeatured.image}
-            alt=""
-            className="h-full w-full object-cover object-[center_25%]"
-          />
-        )}
-        {/* Cinematic dark overlay to ensure readability while displaying background */}
-        <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
-      </div>
-
+    <div className="min-h-screen bg-[#141414] text-foreground">
       <Nav />
 
       <main>
-        <Hero 
-          featured={activeFeatured} 
-          onMoreInfo={openFeaturedSlideshow} 
+        <Hero
+          featured={activeFeatured}
+          onMoreInfo={openFeaturedSlideshow}
+          onVideoEnded={nextFeatured}
         />
 
-        {/* Rows container pulled up slightly to sit below Hero buttons while floating on top of background */}
-        <div className="relative -mt-12 md:-mt-24 pb-20 z-20 bg-transparent">
-          {occasions.map((occ) => {
-            // Slice items inside row to max 5 items (most shoots naturally have 1 to 3 anyway)
-            const limitedItems = occ.images.slice(0, 5);
-            return (
-              <Row
-                key={occ.id}
-                title={occ.title}
-                items={limitedItems}
-                layout={occ.aspect === "landscape" ? "landscape" : "portrait"}
-                onOpenCard={(idx) => openItem(occ, idx)}
-                isMobile={isMobile}
-              />
-            );
-          })}
+        {/* Rows sit directly below the hero with no gap */}
+        <div className="relative z-20 bg-[#141414] pb-20">
+          {rows.map((row, idx) => (
+            <Row
+              key={idx}
+              title={row.title}
+              items={row.items}
+              layout="portrait"
+              onOpenCard={(cardIdx) => openItem(row.title, interleavedMedia, i_offset(rows, idx) + cardIdx)}
+              isMobile={isMobile}
+            />
+          ))}
         </div>
       </main>
 
@@ -192,4 +170,9 @@ function Index() {
       />
     </div>
   );
+}
+
+// Helper: calculate absolute offset of a row in the full interleaved array
+function i_offset(rows: { title: string; items: MediaItem[] }[], rowIdx: number): number {
+  return rows.slice(0, rowIdx).reduce((acc, r) => acc + r.items.length, 0);
 }
