@@ -1,14 +1,14 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import type { MediaItem, Layout } from "@/lib/gallery";
+import type { GalleryItem, Layout } from "@/lib/gallery";
 import { Card } from "./Card";
 
 interface RowProps {
   title: string;
-  items: MediaItem[];
+  items: GalleryItem[];
   layout: Layout;
-  onOpenCard: (index: number) => void;
+  onOpenCard: (item: GalleryItem) => void;
   isMobile: boolean;
   autoScroll?: boolean;
 }
@@ -110,7 +110,7 @@ export function Row({ title, items, layout, onOpenCard, isMobile, autoScroll = f
               <Card
                 item={item}
                 layout={layout}
-                onOpen={() => onOpenCard(idx)}
+                onOpen={() => onOpenCard(item)}
                 isMobile={isMobile}
               />
             </motion.div>
