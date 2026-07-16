@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Row, useIsMobile } from "@/components/Row";
 import { Slideshow } from "@/components/Slideshow";
 import { Footer } from "@/components/Footer";
-import { getAlbums, resolveUrl, type GalleryItem } from "@/lib/gallery";
+import { getAlbums, resolveUrl, type GalleryItem, type MediaItem } from "@/lib/gallery";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -96,29 +96,68 @@ function Index() {
   const [openItemState, setOpenItemState] = useState<GalleryItem | null>(null);
   const [slideshowStartIndex, setSlideshowStartIndex] = useState(0);
 
-  const openItem = (item: GalleryItem, startIndex: number = 0) => {
-    setOpenItemState(item);
+  const openItem = (rowTitle: string, rowItems: MediaItem[], startIndex: number) => {
+    setOpenItemState({
+      id: rowTitle.toLowerCase().replace(/ /g, "_"),
+      title: rowTitle,
+      description: `Showcase of ${rowTitle}.`,
+      date: "2025",
+      aspect: "portrait",
+      image: rowItems[startIndex].url,
+      images: rowItems,
+      album: rowTitle
+    });
     setSlideshowStartIndex(startIndex);
   };
 
   const openFeaturedSlideshow = () => {
-    // Find the occasion matching activeFeatured.id
-    const matchOccasion = albums
-      .flatMap(a => a.items)
-      .find(occ => occ.id === activeFeatured.id);
+    const allMediaItems = albums.flatMap(a => a.items.flatMap(occ => occ.images));
+    const filename = activeFeatured.image.split("/").pop();
+    const matchIndex = allMediaItems.findIndex(img => img.url.endsWith(filename || ""));
 
-    if (matchOccasion) {
-      openItem(matchOccasion, 0);
+    if (matchIndex !== -1) {
+      openItem("Featured Showcase", allMediaItems, matchIndex);
     } else {
-      const first = albums[0]?.items[0];
+      const first = albums[0]?.items[0]?.images;
       if (first) {
-        openItem(first, 0);
+        openItem("Showcase", first, 0);
       }
     }
   };
 
-  // Construct category rows directly from category albums in database (excluding "recent")
-  const categoryRows = albums.filter((a) => a.slug !== "recent");
+  // Extract all video items to distribute them
+  const videosAlbum = albums.find((a) => a.slug === "videos");
+  const videoItems = videosAlbum ? videosAlbum.items.flatMap((occ) => occ.images) : [];
+
+  // Construct 3 category rows (excluding "recent" and "videos") and distribute video items evenly
+  // Restrict displayed cards count to exactly 5 items per row
+  const categoryRows = albums
+    .filter((a) => a.slug !== "recent" && a.slug !== "videos")
+    .map((album, idx) => {
+      const mediaItems = album.items.flatMap((occ) => occ.images);
+      
+      // Distribute 8 video items: 3 to Travel, 3 to Portraits, 2 to Candids
+      let distributedVideos: MediaItem[] = [];
+      if (idx === 0) {
+        distributedVideos = videoItems.slice(0, 3);
+      } else if (idx === 1) {
+        distributedVideos = videoItems.slice(3, 6);
+      } else if (idx === 2) {
+        distributedVideos = videoItems.slice(6);
+      }
+
+      // Prepend videos to ensure they are immediately visible in the row
+      const combinedItems = [...distributedVideos, ...mediaItems];
+      const limitedItems = combinedItems.slice(0, 5);
+
+      return {
+        slug: album.slug,
+        title: album.title,
+        layout: album.layout,
+        items: limitedItems,
+        allMediaItems: combinedItems
+      };
+    });
 
   return (
     <div className="min-h-screen bg-transparent text-foreground animate-fade-in relative">
@@ -154,7 +193,7 @@ function Index() {
           onMoreInfo={openFeaturedSlideshow} 
         />
 
-        {/* Rows container pulled up slightly to sit below Hero buttons while floating on top of background */}
+        {/* Rows container pulled up to sit below Hero buttons while floating on top of background */}
         <div className="relative -mt-12 md:-mt-24 pb-20 z-20 bg-transparent">
           {categoryRows.map((row) => (
             <Row
@@ -162,7 +201,7 @@ function Index() {
               title={row.title}
               items={row.items}
               layout={row.layout}
-              onOpenCard={(item) => openItem(item, 0)}
+              onOpenCard={(idx) => openItem(row.title, row.allMediaItems, idx)}
               isMobile={isMobile}
             />
           ))}

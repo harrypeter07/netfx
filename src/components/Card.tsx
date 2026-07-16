@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { motion as motionChild, AnimatePresence as FramerAnimatePresence } from "framer-motion";
 import { Heart, Info, Plus, Play } from "lucide-react";
-import type { GalleryItem, Layout } from "@/lib/gallery";
+import type { MediaItem, Layout } from "@/lib/gallery";
 
 interface CardProps {
-  item: GalleryItem;
+  item: MediaItem;
   layout: Layout;
   onOpen: () => void;
   isMobile: boolean;
@@ -16,7 +16,6 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const hoverTimer = useRef<number | null>(null);
   const aspect = layout === "portrait" ? "aspect-[2/3]" : "aspect-video";
-  const isVideo = item.image.endsWith(".mp4");
 
   const beginHover = () => {
     if (isMobile) return;
@@ -36,13 +35,13 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
 
   // Load video sources with a small delay to prioritize image downloads first
   useEffect(() => {
-    if (isVideo) {
+    if (item.type === "video") {
       const timer = setTimeout(() => {
         setShouldLoadVideo(true);
       }, 600);
       return () => clearTimeout(timer);
     }
-  }, [isVideo]);
+  }, [item.type]);
 
   return (
     <motionChild.div
@@ -69,10 +68,10 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
       >
         <div className={`relative ${aspect} w-full overflow-hidden`}>
           {!loaded && <div className="shimmer absolute inset-0 bg-[#333]" />}
-          {isVideo ? (
+          {item.type === "video" ? (
             shouldLoadVideo ? (
               <video
-                src={item.image}
+                src={item.url}
                 autoPlay
                 loop
                 muted
@@ -87,7 +86,7 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
             )
           ) : (
             <img
-              src={item.image}
+              src={item.url}
               alt={item.title}
               loading="lazy"
               onLoad={() => setLoaded(true)}
@@ -95,7 +94,7 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
               style={{ opacity: loaded ? 1 : 0 }}
             />
           )}
-          {isVideo && (
+          {item.type === "video" && (
             <div className="absolute bottom-2 right-2 z-10 rounded-full bg-black/60 p-1 text-white border border-white/10">
               <Play className="h-2.5 w-2.5 fill-white animate-pulse" />
             </div>
@@ -123,8 +122,8 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
                 </IconBtn>
               </div>
               <p className="truncate text-[11px] font-semibold text-white">{item.title}</p>
-              <p className="text-[10px]" style={{ color: "var(--meta)" }}>
-                {item.date} · {item.images?.length || 0} {item.images?.length === 1 ? 'item' : 'items'}
+              <p className="text-[10px] capitalize" style={{ color: "var(--meta)" }}>
+                {item.outfit.replace(/_/g, " ")} · {item.type === "video" ? "Video" : "Photo"}
               </p>
             </motionChild.div>
           )}
