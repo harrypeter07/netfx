@@ -13,6 +13,7 @@ interface CardProps {
 export function Card({ item, layout, onOpen, isMobile }: CardProps) {
   const [hovered, setHovered] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const hoverTimer = useRef<number | null>(null);
   const aspect = layout === "portrait" ? "aspect-[2/3]" : "aspect-video";
 
@@ -31,6 +32,16 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
     },
     [],
   );
+
+  // Load video sources with a small delay to prioritize image downloads first
+  useEffect(() => {
+    if (item.type === "video") {
+      const timer = setTimeout(() => {
+        setShouldLoadVideo(true);
+      }, 600);
+      return () => clearTimeout(timer);
+    }
+  }, [item.type]);
 
   return (
     <motionChild.div
@@ -58,16 +69,21 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
         <div className={`relative ${aspect} w-full overflow-hidden`}>
           {!loaded && <div className="shimmer absolute inset-0 bg-[#333]" />}
           {item.type === "video" ? (
-            <video
-              src={item.url}
-              autoPlay
-              loop
-              muted
-              playsInline
-              onLoadedData={() => setLoaded(true)}
-              className="h-full w-full object-cover transition-opacity duration-300"
-              style={{ opacity: loaded ? 1 : 0 }}
-            />
+            shouldLoadVideo ? (
+              <video
+                src={item.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                onLoadedData={() => setLoaded(true)}
+                className="h-full w-full object-cover transition-opacity duration-300"
+                style={{ opacity: loaded ? 1 : 0 }}
+              />
+            ) : (
+              <div className="absolute inset-0 bg-[#2a2a2a] shimmer" />
+            )
           ) : (
             <img
               src={item.url}

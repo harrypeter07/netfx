@@ -125,21 +125,36 @@ function Index() {
     }
   };
 
-  // Construct 4 rich rows by flattening occasions inside category albums
-  // Limit Video clips row to 3 cards, and other image rows to 5 cards max so Hero bg is visible
+  // Extract all video items to distribute them
+  const videosAlbum = albums.find((a) => a.slug === "videos");
+  const videoItems = videosAlbum ? videosAlbum.items.flatMap((occ) => occ.images) : [];
+
+  // Construct 3 category rows (excluding "recent" and "videos") and distribute video items evenly
   const categoryRows = albums
-    .filter((a) => a.slug !== "recent")
-    .map((album) => {
+    .filter((a) => a.slug !== "recent" && a.slug !== "videos")
+    .map((album, idx) => {
       const mediaItems = album.items.flatMap((occ) => occ.images);
-      const maxCount = album.slug === "videos" ? 3 : 5;
-      const limitedItems = mediaItems.slice(0, maxCount);
+      
+      // Distribute 8 video items: 3 to Travel, 3 to Portraits, 2 to Candids
+      let distributedVideos: MediaItem[] = [];
+      if (idx === 0) {
+        distributedVideos = videoItems.slice(0, 3);
+      } else if (idx === 1) {
+        distributedVideos = videoItems.slice(3, 6);
+      } else if (idx === 2) {
+        distributedVideos = videoItems.slice(6);
+      }
+
+      // Prepend videos to ensure they are immediately visible in the row
+      const combinedItems = [...distributedVideos, ...mediaItems];
+      const limitedItems = combinedItems.slice(0, 5);
 
       return {
         slug: album.slug,
         title: album.title,
         layout: album.layout,
         items: limitedItems,
-        allMediaItems: mediaItems
+        allMediaItems: combinedItems
       };
     });
 
