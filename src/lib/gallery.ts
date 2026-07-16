@@ -47,7 +47,47 @@ export interface Person {
   tagline: string;
 }
 
-const typed = data as unknown as {
+// Configure your ImageKit URL endpoint here or in your .env file as VITE_IMAGEKIT_ENDPOINT
+// Example: "https://ik.imagekit.io/your_imagekit_id"
+const IMAGEKIT_ENDPOINT = (import.meta.env.VITE_IMAGEKIT_ENDPOINT as string) || "";
+
+const transformData = (raw: typeof data) => {
+  const cloned = JSON.parse(JSON.stringify(raw));
+  
+  const resolveUrl = (url: string): string => {
+    if (IMAGEKIT_ENDPOINT && url && url.startsWith("/gallery/")) {
+      return `${IMAGEKIT_ENDPOINT}${url}`;
+    }
+    return url;
+  };
+
+  if (cloned.featured) {
+    cloned.featured.image = resolveUrl(cloned.featured.image);
+    if (cloned.featured.images) {
+      cloned.featured.images.forEach((img: any) => {
+        img.url = resolveUrl(img.url);
+      });
+    }
+  }
+
+  if (cloned.albums) {
+    cloned.albums.forEach((album: any) => {
+      if (album.items) {
+        album.items.forEach((item: any) => {
+          item.image = resolveUrl(item.image);
+          if (item.images) {
+            item.images.forEach((img: any) => {
+              img.url = resolveUrl(img.url);
+            });
+          }
+        });
+      }
+    });
+  }
+  return cloned;
+};
+
+const typed = transformData(data) as unknown as {
   person: Person;
   featured: Featured;
   albums: Album[];
