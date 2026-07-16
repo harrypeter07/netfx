@@ -49,7 +49,7 @@ export interface Person {
 
 // Configure your ImageKit URL endpoint here or in your .env file as VITE_IMAGEKIT_ENDPOINT
 // Example: "https://ik.imagekit.io/your_imagekit_id"
-const IMAGEKIT_ENDPOINT = (import.meta.env.VITE_IMAGEKIT_ENDPOINT as string) || "https://ik.imagekit.io/u45u3g51j";
+const IMAGEKIT_ENDPOINT = (import.meta.env.VITE_IMAGEKIT_ENDPOINT as string) || "";
 
 const transformData = (raw: typeof data) => {
   const cloned = JSON.parse(JSON.stringify(raw));
