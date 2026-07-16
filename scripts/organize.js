@@ -389,18 +389,36 @@ async function run() {
     }));
   }
 
-  // Backup old public/gallery if it exists
+  // Backup old files (copy instead of rename to prevent Windows folder locking EPERM errors)
   if (fs.existsSync(DEST_DIR)) {
-    if (fs.existsSync(BACKUP_DIR)) {
-      console.log(`[Backup] Removing old backup at ${BACKUP_DIR}`);
-      fs.rmSync(BACKUP_DIR, { recursive: true, force: true });
+    try {
+      if (fs.existsSync(BACKUP_DIR)) {
+        console.log(`[Backup] Removing old backup at ${BACKUP_DIR}`);
+        fs.rmSync(BACKUP_DIR, { recursive: true, force: true });
+      }
+      fs.mkdirSync(BACKUP_DIR, { recursive: true });
+      console.log(`[Backup] Copying current files to backup folder...`);
+      const currentFiles = fs.readdirSync(DEST_DIR);
+      for (const f of currentFiles) {
+        fs.copyFileSync(path.join(DEST_DIR, f), path.join(BACKUP_DIR, f));
+      }
+      console.log(`[Backup] Clearing old files in destination folder...`);
+      for (const f of currentFiles) {
+        try {
+          fs.unlinkSync(path.join(DEST_DIR, f));
+        } catch (err) {
+          // Ignore individual locked files
+        }
+      }
+    } catch (e) {
+      console.warn("[Backup Warning] Could not fully backup/clear old gallery due to file lock, continuing directly:", e.message);
     }
-    console.log(`[Backup] Backing up current gallery to ${BACKUP_DIR}`);
-    fs.renameSync(DEST_DIR, BACKUP_DIR);
   }
 
-  // Create clean destination directory
-  fs.mkdirSync(DEST_DIR, { recursive: true });
+  // Ensure clean destination directory exists
+  if (!fs.existsSync(DEST_DIR)) {
+    fs.mkdirSync(DEST_DIR, { recursive: true });
+  }
 
   console.log("\nCopying and renaming files to public/gallery/...");
 
@@ -435,17 +453,19 @@ async function run() {
       aspect: item.aspect || "portrait"
     };
 
-    if (!galleryItemsMap[item.occasion]) {
-      galleryItemsMap[item.occasion] = {
-        id: item.occasion,
-        title: item.occasion.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
+    const itemOccKey = `${item.occasion}_${item.outfit}`;
+
+    if (!galleryItemsMap[itemOccKey]) {
+      galleryItemsMap[itemOccKey] = {
+        id: itemOccKey,
+        title: itemOccKey.replace(/_video$/i, "").replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
         date: item.date || "2025",
-        description: `A collection from ${item.occasion.replace(/_/g, " ")}.`,
+        description: `A collection from ${item.occasion.replace(/_/g, " ")} featuring ${item.outfit.replace(/_/g, " ")}.`,
         aspect: item.aspect || "portrait",
         images: []
       };
     }
-    galleryItemsMap[item.occasion].images.push(mediaItem);
+    galleryItemsMap[itemOccKey].images.push(mediaItem);
   }
 
   console.log("\nStructuring gallery JSON...");

@@ -5,27 +5,36 @@
     "tagline": "Life in frames — outfits, occasions, and quiet moments."
   },
   "featured": {
-    "id": "garden_photoshoot",
-    "title": "Garden Photoshoot",
-    "description": "A collection from garden photoshoot.",
+    "id": "garden_photoshoot_pink_saree",
+    "title": "Garden Photoshoot Pink Saree",
+    "description": "A collection from garden photoshoot featuring pink saree.",
     "image": "/gallery/garden_photoshoot_pink_saree_1.jpeg",
-    "year": "March 2024",
+    "year": "Mar 2024",
     "tag": "Featured Showcase",
     "images": [
       {
-        "id": "garden_photoshoot_img_1_4382",
+        "id": "garden_photoshoot_img_1_2915",
         "url": "/gallery/garden_photoshoot_pink_saree_1.jpeg",
         "title": "Blooming Grace",
-        "caption": "Under a canopy of vibrant bougainvillea, she reaches for the beauty of nature, her delicate saree mirroring the soft petals above.",
+        "caption": "Under a canopy of vibrant bougainvillea, she reaches for the beauty of nature, her delicate saree mirroring the soft petals above. A timeless moment of quiet connection between elegance and the wild blossoms.",
         "outfit": "pink_saree",
         "type": "image",
         "aspect": "portrait"
       },
       {
-        "id": "garden_photoshoot_img_2_4389",
+        "id": "garden_photoshoot_img_2_2919",
         "url": "/gallery/garden_photoshoot_pink_saree_2.jpeg",
         "title": "Petals and Poise",
-        "caption": "Amidst the cascade of vibrant bougainvillea, she finds a quiet moment of grace in her soft pink drape.",
+        "caption": "Amidst the cascade of vibrant bougainvillea, she finds a quiet moment of grace. The soft pink drape catches the sunlight, mirroring the delicate beauty of the blossoms she reaches for.",
+        "outfit": "pink_saree",
+        "type": "image",
+        "aspect": "portrait"
+      },
+      {
+        "id": "garden_photoshoot_img_3_3000",
+        "url": "/gallery/garden_photoshoot_pink_saree_3.jpeg",
+        "title": "Radiance Under the Canopy",
+        "caption": "Draped in the elegance of vibrant silk, she stands as a graceful testament to tradition against the backdrop of a sun-drenched, tranquil garden.",
         "outfit": "pink_saree",
         "type": "image",
         "aspect": "portrait"
@@ -39,26 +48,35 @@
       "layout": "landscape",
       "items": [
         {
-          "id": "garden_photoshoot",
-          "title": "Garden Photoshoot",
-          "date": "March 2024",
-          "description": "A collection from garden photoshoot.",
+          "id": "garden_photoshoot_pink_saree",
+          "title": "Garden Photoshoot Pink Saree",
+          "date": "Mar 2024",
+          "description": "A collection from garden photoshoot featuring pink saree.",
           "aspect": "landscape",
           "images": [
             {
-              "id": "garden_photoshoot_img_1_4382",
+              "id": "garden_photoshoot_img_1_2915",
               "url": "/gallery/garden_photoshoot_pink_saree_1.jpeg",
               "title": "Blooming Grace",
-              "caption": "Under a canopy of vibrant bougainvillea, she reaches for the beauty of nature, her delicate saree mirroring the soft petals above.",
+              "caption": "Under a canopy of vibrant bougainvillea, she reaches for the beauty of nature, her delicate saree mirroring the soft petals above. A timeless moment of quiet connection between elegance and the wild blossoms.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "garden_photoshoot_img_2_4389",
+              "id": "garden_photoshoot_img_2_2919",
               "url": "/gallery/garden_photoshoot_pink_saree_2.jpeg",
               "title": "Petals and Poise",
-              "caption": "Amidst the cascade of vibrant bougainvillea, she finds a quiet moment of grace in her soft pink drape.",
+              "caption": "Amidst the cascade of vibrant bougainvillea, she finds a quiet moment of grace. The soft pink drape catches the sunlight, mirroring the delicate beauty of the blossoms she reaches for.",
+              "outfit": "pink_saree",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "garden_photoshoot_img_3_3000",
+              "url": "/gallery/garden_photoshoot_pink_saree_3.jpeg",
+              "title": "Radiance Under the Canopy",
+              "caption": "Draped in the elegance of vibrant silk, she stands as a graceful testament to tradition against the backdrop of a sun-drenched, tranquil garden.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
@@ -68,283 +86,94 @@
           "album": "Recently Added"
         },
         {
-          "id": "candid_home",
-          "title": "Candid Home",
+          "id": "candid_home_isro_tshirt",
+          "title": "Candid Home Isro Tshirt",
           "date": "2025",
-          "description": "A collection from candid home.",
+          "description": "A collection from candid home featuring isro tshirt.",
           "aspect": "landscape",
           "images": [
             {
-              "id": "candid_home_img_1_4396",
-              "url": "/gallery/candid_home_isro_printed_grey_tshirt_1.jpeg",
+              "id": "candid_home_img_1_2924",
+              "url": "/gallery/candid_home_isro_tshirt_1.jpeg",
               "title": "Morning Bliss",
-              "caption": "A slow, peaceful start to the day, wrapped in the comfort of a favorite tee.",
-              "outfit": "isro_printed_grey_tshirt",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4465",
-              "url": "/gallery/candid_home_white_patterned_top_jeans_1.jpeg",
-              "title": "Quiet Thursday Reflection",
-              "caption": "A soft, everyday moment captured in the stillness of home, where simple style meets a gentle gaze.",
-              "outfit": "white_patterned_top_jeans",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4471",
-              "url": "/gallery/candid_home_white_top_1.jpeg",
-              "title": "Soft Whispers of Heartache",
-              "caption": "A gentle monochrome reflection, where time slows down in the stillness of a room.",
-              "outfit": "white_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4478",
-              "url": "/gallery/candid_home_white_butterfly_top_jeans_1.jpeg",
-              "title": "Butterfly Serenity",
-              "caption": "A gentle Thursday captured in the soft glow of a mirror, where simple moments turn into quiet memories.",
-              "outfit": "white_butterfly_top_jeans",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_2_4486",
-              "url": "/gallery/candid_home_white_top_2.jpeg",
-              "title": "Monochrome Reverie",
-              "caption": "A gentle gaze captured in black and white, softened by a constellation of floating hearts.",
-              "outfit": "white_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_3_4502",
-              "url": "/gallery/candid_home_white_top_3.jpeg",
-              "title": "Monochrome Whispers",
-              "caption": "A quiet moment captured in shades of gray, blurring the lines between a simple evening and a fleeting dream.",
-              "outfit": "white_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4589",
-              "url": "/gallery/candid_home_white_textured_top_1.jpeg",
-              "title": "Sunlit Serenity",
-              "caption": "Bathed in the gentle glow of a sunlit afternoon, a soft smile captures a moment of quiet grace.",
-              "outfit": "white_textured_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4605",
-              "url": "/gallery/candid_home_white_embroidered_kurta_1.jpeg",
-              "title": "Sunlit Serenity",
-              "caption": "A moment of quiet grace caught in the soft light of home, where every detail hums with simplicity.",
-              "outfit": "white_embroidered_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_2_4613",
-              "url": "/gallery/candid_home_white_textured_top_2.jpeg",
-              "title": "Sunlit Serenity",
-              "caption": "Bathed in the gentle glow of sunlight, a moment of peaceful contemplation is captured with soft elegance.",
-              "outfit": "white_textured_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4750",
-              "url": "/gallery/candid_home_pink_top_pearls_1.jpeg",
-              "title": "A Gentle Digital Glance",
-              "caption": "A soft, candid moment captured in the quiet glow of an indoor space.",
-              "outfit": "pink_top_pearls",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_2_4764",
-              "url": "/gallery/candid_home_pink_top_pearls_2.jpeg",
-              "title": "A Moment of Quiet Elegance",
-              "caption": "Bathed in soft light, a gentle smile captures a serene moment, accented by the timeless grace of pearls.",
-              "outfit": "pink_top_pearls",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_3_4784",
-              "url": "/gallery/candid_home_pink_top_pearls_3.jpeg",
-              "title": "Quiet Moments of Joy",
-              "caption": "Caught in a sweet digital reverie, her genuine smile reflects the warmth of a peaceful moment.",
-              "outfit": "pink_top_pearls",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4826",
-              "url": "/gallery/candid_home_olive_cowl_neck_top_1.jpeg",
-              "title": "Quiet Radiance",
-              "caption": "A moment of serene beauty captured in the soft light of home, reflecting a calm spirit.",
-              "outfit": "olive_cowl_neck_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4866",
-              "url": "/gallery/candid_home_teal_gold_saree_1.jpeg",
-              "title": "Ethereal Grace",
-              "caption": "Draped in shades of teal and gold, glowing with a gentle, timeless elegance.",
-              "outfit": "teal_gold_saree",
+              "caption": "A slow, peaceful start to the day, wrapped in the comfort of a favorite tee and the warmth of a morning brew.",
+              "outfit": "isro_tshirt",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/candid_home_isro_printed_grey_tshirt_1.jpeg",
+          "image": "/gallery/candid_home_isro_tshirt_1.jpeg",
           "album": "Recently Added"
         },
         {
-          "id": "evening_party",
-          "title": "Evening Party",
-          "date": "December 2024",
-          "description": "A collection from evening party.",
+          "id": "evening_party_green_lehenga",
+          "title": "Evening Party Green Lehenga",
+          "date": "Dec 2024",
+          "description": "A collection from evening party featuring green lehenga.",
           "aspect": "landscape",
           "images": [
             {
-              "id": "evening_party_img_1_4402",
-              "url": "/gallery/evening_party_light_green_embroidered_lehenga_1.jpeg",
+              "id": "evening_party_img_1_2929",
+              "url": "/gallery/evening_party_green_lehenga_1.jpeg",
               "title": "Starlight Serenade",
-              "caption": "Radiating elegance amidst the glow of fairy lights and festive adornments, capturing the essence of a magical evening.",
-              "outfit": "light_green_embroidered_lehenga",
+              "caption": "Radiating elegance amidst the glow of fairy lights and festive adornments, she captures the essence of a magical evening. A soft, shimmering silhouette perfectly framed by the soft luminescence of the night.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "evening_party_img_1_4409",
-              "url": "/gallery/evening_party_green_embellished_dress_1.jpeg",
+              "id": "evening_party_img_2_2933",
+              "url": "/gallery/evening_party_green_lehenga_2.jpeg",
               "title": "Starlit Radiance",
-              "caption": "Bathed in the soft, ethereal glow of string lights and botanical dreams, a moment of quiet grace unfolds.",
-              "outfit": "green_embellished_dress",
+              "caption": "Bathed in the soft, ethereal glow of string lights and botanical dreams, a moment of quiet grace unfolds. Her presence brings a gentle warmth to the sparkling garden night.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "evening_party_img_2_4416",
-              "url": "/gallery/evening_party_green_embellished_dress_2.jpeg",
+              "id": "evening_party_img_3_2937",
+              "url": "/gallery/evening_party_green_lehenga_3.jpeg",
               "title": "Glimmering Twilight",
-              "caption": "Radiating soft grace amidst a cascade of shimmering fairy lights, capturing the magical essence of a star-lit evening.",
-              "outfit": "green_embellished_dress",
+              "caption": "Radiating soft grace amidst a cascade of shimmering fairy lights, she captures the magical essence of a star-lit evening.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "evening_party_img_3_4423",
-              "url": "/gallery/evening_party_green_embellished_dress_3.jpeg",
+              "id": "evening_party_img_4_2941",
+              "url": "/gallery/evening_party_green_lehenga_4.jpeg",
               "title": "Glow of the Evening",
-              "caption": "Radiating elegance amidst a tapestry of shimmering lights, standing as the graceful centerpiece of the night.",
-              "outfit": "green_embellished_dress",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_1_4777",
-              "url": "/gallery/evening_party_checkered_dress_1.jpeg",
-              "title": "Twilight Reflections",
-              "caption": "Under the soft, ambient glow of twilight, the poolside atmosphere mirrors quiet grace.",
-              "outfit": "checkered_dress",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_1_4809",
-              "url": "/gallery/evening_party_checkered_jumpsuit_1.jpeg",
-              "title": "City Lights and Midnight Air",
-              "caption": "Under the soft glow of the city skyline, a moment of quiet grace unfolds.",
-              "outfit": "checkered_jumpsuit",
+              "caption": "Radiating elegance amidst a tapestry of shimmering lights, she stands as the graceful centerpiece of the night. A quiet moment captured in soft luminescence, where elegance meets the gentle glow of celebration.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/evening_party_light_green_embroidered_lehenga_1.jpeg",
+          "image": "/gallery/evening_party_green_lehenga_1.jpeg",
           "album": "Recently Added"
         },
         {
-          "id": "casual_outdoor",
-          "title": "Casual Outdoor",
+          "id": "casual_outdoor_green_ethnic_kurta",
+          "title": "Casual Outdoor Green Ethnic Kurta",
           "date": "2025",
-          "description": "A collection from casual outdoor.",
+          "description": "A collection from casual outdoor featuring green ethnic kurta.",
           "aspect": "landscape",
           "images": [
             {
-              "id": "casual_outdoor_img_1_4429",
+              "id": "casual_outdoor_img_1_2945",
               "url": "/gallery/casual_outdoor_green_ethnic_kurta_1.jpeg",
               "title": "Golden Hour Gaze",
-              "caption": "A soft, quiet moment captured in the gentle light of the day, featuring elegant ethnic attire.",
+              "caption": "A soft, quiet moment captured in the gentle light, where a playful expression meets the tranquil backdrop of the day. Her elegant accessories add a touch of timeless grace to this serene outdoor portrait.",
               "outfit": "green_ethnic_kurta",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "casual_outdoor_img_2_4436",
+              "id": "casual_outdoor_img_2_2949",
               "url": "/gallery/casual_outdoor_green_ethnic_kurta_2.jpeg",
               "title": "Serenity Under Open Skies",
-              "caption": "Bathed in the soft, diffused light of an afternoon sky, standing in peaceful grace.",
+              "caption": "Bathed in the soft, diffused light of an afternoon sky, she stands in peaceful grace. The gentle patterns of her attire mirror the quiet calm of the horizon.",
               "outfit": "green_ethnic_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4509",
-              "url": "/gallery/casual_outdoor_red_kurta_1.jpeg",
-              "title": "Crimson Horizon",
-              "caption": "Bathed in the gentle glow of the setting sun, a simple moment capturing the essence of tranquility.",
-              "outfit": "red_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4576",
-              "url": "/gallery/casual_outdoor_white_embroidered_kurta_1.jpeg",
-              "title": "Sun-Kissed Serenity",
-              "caption": "Golden sunlight dances on faces radiant with shared joy and gentle tranquility.",
-              "outfit": "white_embroidered_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_2_4635",
-              "url": "/gallery/casual_outdoor_white_embroidered_kurta_2.jpeg",
-              "title": "Sun-Dappled Serenity",
-              "caption": "A peaceful moment captured under the gentle gaze of the afternoon sun.",
-              "outfit": "white_embroidered_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4819",
-              "url": "/gallery/casual_outdoor_blue_floral_kurti_1.jpeg",
-              "title": "Sunlight and Serenity",
-              "caption": "Bathed in the gentle glow of late afternoon, a moment of quiet contemplation unfolds.",
-              "outfit": "blue_floral_kurti",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4843",
-              "url": "/gallery/casual_outdoor_blue_printed_kurta_1.jpeg",
-              "title": "Golden Hour Reverie",
-              "caption": "Bathed in the gentle glow of the afternoon sun, a moment of quiet contemplation unfolds.",
-              "outfit": "blue_printed_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4858",
-              "url": "/gallery/casual_outdoor_fuchsia_saree_1.jpeg",
-              "title": "Sun-Dappled Grace",
-              "caption": "A moment of quiet beauty as light dances through the leaves, casting shadows on a traditional drape.",
-              "outfit": "fuchsia_saree",
               "type": "image",
               "aspect": "portrait"
             }
@@ -353,99 +182,27 @@
           "album": "Recently Added"
         },
         {
-          "id": "festival_celebration",
-          "title": "Festival Celebration",
-          "date": "October 2024",
-          "description": "A collection from festival celebration.",
+          "id": "festival_celebration_pink_saree",
+          "title": "Festival Celebration Pink Saree",
+          "date": "Oct 2024",
+          "description": "A collection from festival celebration featuring pink saree.",
           "aspect": "landscape",
           "images": [
             {
-              "id": "festival_celebration_img_1_4442",
+              "id": "festival_celebration_img_1_2954",
               "url": "/gallery/festival_celebration_pink_saree_1.jpeg",
               "title": "Pink Petals of Tradition",
-              "caption": "Draped in vibrant hues and adorned with timeless gold, embodying the grace of heritage.",
+              "caption": "Draped in vibrant hues and adorned with timeless gold, she embodies the grace of heritage. A picture of elegance framed by tradition and a gentle, serene smile.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "festival_celebration_img_1_4450",
-              "url": "/gallery/festival_celebration_red_saree_with_green_blouse_1.jpeg",
-              "title": "Moonlit Grace",
-              "caption": "Under the soft glow of the rising moon, wearing tradition like a gentle whisper.",
-              "outfit": "red_saree_with_green_blouse",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_1_4458",
-              "url": "/gallery/festival_celebration_orange_pink_saree_1.jpeg",
-              "title": "Sun-Kissed Grace",
-              "caption": "Radiating traditional elegance in vibrant orange and pink, harmonizing with the lush garden surroundings.",
-              "outfit": "orange_pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_4494",
-              "url": "/gallery/festival_celebration_orange_pink_saree_2.jpeg",
-              "title": "Sun-Kissed Elegance",
-              "caption": "A radiant symphony of marigold orange and deep magenta flowing like a vibrant poem in the soft, natural light.",
-              "outfit": "orange_pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_4516",
+              "id": "festival_celebration_img_2_3009",
               "url": "/gallery/festival_celebration_pink_saree_2.jpeg",
-              "title": "Radiance Under the Canopy",
-              "caption": "Draped in the elegance of vibrant silk, a graceful testament to tradition against a sun-drenched backdrop.",
-              "outfit": "pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_3_4523",
-              "url": "/gallery/festival_celebration_orange_pink_saree_3.jpeg",
-              "title": "Vibrant Traditions",
-              "caption": "Draped in the vibrant hues of tradition, standing as a picture of elegance amidst nature.",
-              "outfit": "orange_pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_3_4531",
-              "url": "/gallery/festival_celebration_pink_saree_3.jpeg",
               "title": "Grace in Magenta",
-              "caption": "Radiating elegance in a vibrant magenta drape, a timeless portrait of cultural beauty and serene poise.",
+              "caption": "Radiating elegance in a vibrant magenta drape, her grace speaks volumes through the shimmer of traditional gold. A timeless portrait of cultural beauty and serene poise.",
               "outfit": "pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_1_4687",
-              "url": "/gallery/festival_celebration_teal_silk_saree_1.jpeg",
-              "title": "Emerald Grace",
-              "caption": "Wrapped in the elegance of teal and gold, standing with a serene grace that echoes tradition.",
-              "outfit": "teal_silk_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_4695",
-              "url": "/gallery/festival_celebration_teal_silk_saree_2.jpeg",
-              "title": "Emerald Grace",
-              "caption": "Wrapped in the elegance of traditional hues, standing as a picture of serene charm.",
-              "outfit": "teal_silk_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_3_4715",
-              "url": "/gallery/festival_celebration_teal_silk_saree_3.jpeg",
-              "title": "Elegance in Teal",
-              "caption": "A soft, radiant glow mirrors the serenity of an elegantly draped teal saree.",
-              "outfit": "teal_silk_saree",
               "type": "image",
               "aspect": "portrait"
             }
@@ -461,14 +218,14 @@
       "layout": "landscape",
       "items": [
         {
-          "id": "video_clips",
+          "id": "video_clips_video",
           "title": "Video Clips",
           "date": "2025",
-          "description": "A collection from video clips.",
+          "description": "A collection from video clips featuring video.",
           "aspect": "landscape",
           "images": [
             {
-              "id": "video_clips_img_1_4873",
+              "id": "video_clips_img_1_3191",
               "url": "/gallery/video_clips_video_1.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -477,7 +234,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_2_4881",
+              "id": "video_clips_img_2_3195",
               "url": "/gallery/video_clips_video_2.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -486,7 +243,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_3_4889",
+              "id": "video_clips_img_3_3199",
               "url": "/gallery/video_clips_video_3.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -495,7 +252,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_4_4896",
+              "id": "video_clips_img_4_3202",
               "url": "/gallery/video_clips_video_4.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -504,7 +261,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_5_4903",
+              "id": "video_clips_img_5_3216",
               "url": "/gallery/video_clips_video_5.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -513,7 +270,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_6_4911",
+              "id": "video_clips_img_6_3227",
               "url": "/gallery/video_clips_video_6.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -522,7 +279,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_7_4918",
+              "id": "video_clips_img_7_3240",
               "url": "/gallery/video_clips_video_7.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -531,7 +288,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_8_4926",
+              "id": "video_clips_img_8_3256",
               "url": "/gallery/video_clips_video_8.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -540,7 +297,7 @@
               "aspect": "landscape"
             },
             {
-              "id": "video_clips_img_9_4933",
+              "id": "video_clips_img_9_3264",
               "url": "/gallery/video_clips_video_9.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
@@ -560,32 +317,108 @@
       "layout": "portrait",
       "items": [
         {
-          "id": "garden_photoshoot",
-          "title": "Garden Photoshoot",
-          "date": "March 2024",
-          "description": "A collection from garden photoshoot.",
+          "id": "garden_photoshoot_pink_saree",
+          "title": "Garden Photoshoot Pink Saree",
+          "date": "Mar 2024",
+          "description": "A collection from garden photoshoot featuring pink saree.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "garden_photoshoot_img_1_4382",
+              "id": "garden_photoshoot_img_1_2915",
               "url": "/gallery/garden_photoshoot_pink_saree_1.jpeg",
               "title": "Blooming Grace",
-              "caption": "Under a canopy of vibrant bougainvillea, she reaches for the beauty of nature, her delicate saree mirroring the soft petals above.",
+              "caption": "Under a canopy of vibrant bougainvillea, she reaches for the beauty of nature, her delicate saree mirroring the soft petals above. A timeless moment of quiet connection between elegance and the wild blossoms.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "garden_photoshoot_img_2_4389",
+              "id": "garden_photoshoot_img_2_2919",
               "url": "/gallery/garden_photoshoot_pink_saree_2.jpeg",
               "title": "Petals and Poise",
-              "caption": "Amidst the cascade of vibrant bougainvillea, she finds a quiet moment of grace in her soft pink drape.",
+              "caption": "Amidst the cascade of vibrant bougainvillea, she finds a quiet moment of grace. The soft pink drape catches the sunlight, mirroring the delicate beauty of the blossoms she reaches for.",
+              "outfit": "pink_saree",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "garden_photoshoot_img_3_3000",
+              "url": "/gallery/garden_photoshoot_pink_saree_3.jpeg",
+              "title": "Radiance Under the Canopy",
+              "caption": "Draped in the elegance of vibrant silk, she stands as a graceful testament to tradition against the backdrop of a sun-drenched, tranquil garden.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
             }
           ],
           "image": "/gallery/garden_photoshoot_pink_saree_1.jpeg",
+          "album": "Outfits & Portraits"
+        },
+        {
+          "id": "urban_stroll_olive_outfit",
+          "title": "Urban Stroll Olive Outfit",
+          "date": "2025",
+          "description": "A collection from urban stroll featuring olive outfit.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "urban_stroll_img_1_3100",
+              "url": "/gallery/urban_stroll_olive_outfit_1.jpeg",
+              "title": "Urban Serenity",
+              "caption": "Amidst the urban rush, a gentle smile brings a moment of quiet grace to the bustling city street.",
+              "outfit": "olive_outfit",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "urban_stroll_img_2_3103",
+              "url": "/gallery/urban_stroll_olive_outfit_2.jpeg",
+              "title": "Urban Reverie",
+              "caption": "Caught in a moment of quiet contemplation, the soft sunlight traces the edges of an afternoon walk through the city. With a casual grace, the world pauses just for a breath.",
+              "outfit": "olive_outfit",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/urban_stroll_olive_outfit_1.jpeg",
+          "album": "Outfits & Portraits"
+        },
+        {
+          "id": "waiting_area_olive_outfit",
+          "title": "Waiting Area Olive Outfit",
+          "date": "Feb 2025",
+          "description": "A collection from waiting area featuring olive outfit.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "waiting_area_img_1_3111",
+              "url": "/gallery/waiting_area_olive_outfit_1.jpeg",
+              "title": "Paused Reflections",
+              "caption": "A moment of quiet introspection as the soft morning light filters through, framing a thoughtful gaze against the rhythm of a transient space. Dressed in earth tones, she finds stillness amidst the waiting.",
+              "outfit": "olive_outfit",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "waiting_area_img_2_3115",
+              "url": "/gallery/waiting_area_olive_outfit_2.jpeg",
+              "title": "A Moment of Quiet Transit",
+              "caption": "Bathed in the soft, natural light of a station window, she waits with a graceful poise. The quiet stillness of the moment is captured as she adjusts her cap, lost in a fleeting thought while the world outside carries on.",
+              "outfit": "olive_outfit",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "waiting_area_img_3_3119",
+              "url": "/gallery/waiting_area_olive_outfit_3.jpeg",
+              "title": "Quiet Interlude",
+              "caption": "Caught in a moment of soft reflection, the gentle light filters through the window as she waits, her poise a serene contrast to the world passing by. An olive-hued stillness captured between arrivals and departures.",
+              "outfit": "olive_outfit",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/waiting_area_olive_outfit_1.jpeg",
           "album": "Outfits & Portraits"
         }
       ]
@@ -596,283 +429,94 @@
       "layout": "landscape",
       "items": [
         {
-          "id": "candid_home",
-          "title": "Candid Home",
+          "id": "candid_home_isro_tshirt",
+          "title": "Candid Home Isro Tshirt",
           "date": "2025",
-          "description": "A collection from candid home.",
+          "description": "A collection from candid home featuring isro tshirt.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "candid_home_img_1_4396",
-              "url": "/gallery/candid_home_isro_printed_grey_tshirt_1.jpeg",
+              "id": "candid_home_img_1_2924",
+              "url": "/gallery/candid_home_isro_tshirt_1.jpeg",
               "title": "Morning Bliss",
-              "caption": "A slow, peaceful start to the day, wrapped in the comfort of a favorite tee.",
-              "outfit": "isro_printed_grey_tshirt",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4465",
-              "url": "/gallery/candid_home_white_patterned_top_jeans_1.jpeg",
-              "title": "Quiet Thursday Reflection",
-              "caption": "A soft, everyday moment captured in the stillness of home, where simple style meets a gentle gaze.",
-              "outfit": "white_patterned_top_jeans",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4471",
-              "url": "/gallery/candid_home_white_top_1.jpeg",
-              "title": "Soft Whispers of Heartache",
-              "caption": "A gentle monochrome reflection, where time slows down in the stillness of a room.",
-              "outfit": "white_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4478",
-              "url": "/gallery/candid_home_white_butterfly_top_jeans_1.jpeg",
-              "title": "Butterfly Serenity",
-              "caption": "A gentle Thursday captured in the soft glow of a mirror, where simple moments turn into quiet memories.",
-              "outfit": "white_butterfly_top_jeans",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_2_4486",
-              "url": "/gallery/candid_home_white_top_2.jpeg",
-              "title": "Monochrome Reverie",
-              "caption": "A gentle gaze captured in black and white, softened by a constellation of floating hearts.",
-              "outfit": "white_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_3_4502",
-              "url": "/gallery/candid_home_white_top_3.jpeg",
-              "title": "Monochrome Whispers",
-              "caption": "A quiet moment captured in shades of gray, blurring the lines between a simple evening and a fleeting dream.",
-              "outfit": "white_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4589",
-              "url": "/gallery/candid_home_white_textured_top_1.jpeg",
-              "title": "Sunlit Serenity",
-              "caption": "Bathed in the gentle glow of a sunlit afternoon, a soft smile captures a moment of quiet grace.",
-              "outfit": "white_textured_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4605",
-              "url": "/gallery/candid_home_white_embroidered_kurta_1.jpeg",
-              "title": "Sunlit Serenity",
-              "caption": "A moment of quiet grace caught in the soft light of home, where every detail hums with simplicity.",
-              "outfit": "white_embroidered_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_2_4613",
-              "url": "/gallery/candid_home_white_textured_top_2.jpeg",
-              "title": "Sunlit Serenity",
-              "caption": "Bathed in the gentle glow of sunlight, a moment of peaceful contemplation is captured with soft elegance.",
-              "outfit": "white_textured_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4750",
-              "url": "/gallery/candid_home_pink_top_pearls_1.jpeg",
-              "title": "A Gentle Digital Glance",
-              "caption": "A soft, candid moment captured in the quiet glow of an indoor space.",
-              "outfit": "pink_top_pearls",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_2_4764",
-              "url": "/gallery/candid_home_pink_top_pearls_2.jpeg",
-              "title": "A Moment of Quiet Elegance",
-              "caption": "Bathed in soft light, a gentle smile captures a serene moment, accented by the timeless grace of pearls.",
-              "outfit": "pink_top_pearls",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_3_4784",
-              "url": "/gallery/candid_home_pink_top_pearls_3.jpeg",
-              "title": "Quiet Moments of Joy",
-              "caption": "Caught in a sweet digital reverie, her genuine smile reflects the warmth of a peaceful moment.",
-              "outfit": "pink_top_pearls",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4826",
-              "url": "/gallery/candid_home_olive_cowl_neck_top_1.jpeg",
-              "title": "Quiet Radiance",
-              "caption": "A moment of serene beauty captured in the soft light of home, reflecting a calm spirit.",
-              "outfit": "olive_cowl_neck_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "candid_home_img_1_4866",
-              "url": "/gallery/candid_home_teal_gold_saree_1.jpeg",
-              "title": "Ethereal Grace",
-              "caption": "Draped in shades of teal and gold, glowing with a gentle, timeless elegance.",
-              "outfit": "teal_gold_saree",
+              "caption": "A slow, peaceful start to the day, wrapped in the comfort of a favorite tee and the warmth of a morning brew.",
+              "outfit": "isro_tshirt",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/candid_home_isro_printed_grey_tshirt_1.jpeg",
+          "image": "/gallery/candid_home_isro_tshirt_1.jpeg",
           "album": "Candid Moments"
         },
         {
-          "id": "evening_party",
-          "title": "Evening Party",
-          "date": "December 2024",
-          "description": "A collection from evening party.",
+          "id": "evening_party_green_lehenga",
+          "title": "Evening Party Green Lehenga",
+          "date": "Dec 2024",
+          "description": "A collection from evening party featuring green lehenga.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "evening_party_img_1_4402",
-              "url": "/gallery/evening_party_light_green_embroidered_lehenga_1.jpeg",
+              "id": "evening_party_img_1_2929",
+              "url": "/gallery/evening_party_green_lehenga_1.jpeg",
               "title": "Starlight Serenade",
-              "caption": "Radiating elegance amidst the glow of fairy lights and festive adornments, capturing the essence of a magical evening.",
-              "outfit": "light_green_embroidered_lehenga",
+              "caption": "Radiating elegance amidst the glow of fairy lights and festive adornments, she captures the essence of a magical evening. A soft, shimmering silhouette perfectly framed by the soft luminescence of the night.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "evening_party_img_1_4409",
-              "url": "/gallery/evening_party_green_embellished_dress_1.jpeg",
+              "id": "evening_party_img_2_2933",
+              "url": "/gallery/evening_party_green_lehenga_2.jpeg",
               "title": "Starlit Radiance",
-              "caption": "Bathed in the soft, ethereal glow of string lights and botanical dreams, a moment of quiet grace unfolds.",
-              "outfit": "green_embellished_dress",
+              "caption": "Bathed in the soft, ethereal glow of string lights and botanical dreams, a moment of quiet grace unfolds. Her presence brings a gentle warmth to the sparkling garden night.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "evening_party_img_2_4416",
-              "url": "/gallery/evening_party_green_embellished_dress_2.jpeg",
+              "id": "evening_party_img_3_2937",
+              "url": "/gallery/evening_party_green_lehenga_3.jpeg",
               "title": "Glimmering Twilight",
-              "caption": "Radiating soft grace amidst a cascade of shimmering fairy lights, capturing the magical essence of a star-lit evening.",
-              "outfit": "green_embellished_dress",
+              "caption": "Radiating soft grace amidst a cascade of shimmering fairy lights, she captures the magical essence of a star-lit evening.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "evening_party_img_3_4423",
-              "url": "/gallery/evening_party_green_embellished_dress_3.jpeg",
+              "id": "evening_party_img_4_2941",
+              "url": "/gallery/evening_party_green_lehenga_4.jpeg",
               "title": "Glow of the Evening",
-              "caption": "Radiating elegance amidst a tapestry of shimmering lights, standing as the graceful centerpiece of the night.",
-              "outfit": "green_embellished_dress",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_1_4777",
-              "url": "/gallery/evening_party_checkered_dress_1.jpeg",
-              "title": "Twilight Reflections",
-              "caption": "Under the soft, ambient glow of twilight, the poolside atmosphere mirrors quiet grace.",
-              "outfit": "checkered_dress",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_1_4809",
-              "url": "/gallery/evening_party_checkered_jumpsuit_1.jpeg",
-              "title": "City Lights and Midnight Air",
-              "caption": "Under the soft glow of the city skyline, a moment of quiet grace unfolds.",
-              "outfit": "checkered_jumpsuit",
+              "caption": "Radiating elegance amidst a tapestry of shimmering lights, she stands as the graceful centerpiece of the night. A quiet moment captured in soft luminescence, where elegance meets the gentle glow of celebration.",
+              "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/evening_party_light_green_embroidered_lehenga_1.jpeg",
+          "image": "/gallery/evening_party_green_lehenga_1.jpeg",
           "album": "Candid Moments"
         },
         {
-          "id": "casual_outdoor",
-          "title": "Casual Outdoor",
+          "id": "casual_outdoor_green_ethnic_kurta",
+          "title": "Casual Outdoor Green Ethnic Kurta",
           "date": "2025",
-          "description": "A collection from casual outdoor.",
+          "description": "A collection from casual outdoor featuring green ethnic kurta.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "casual_outdoor_img_1_4429",
+              "id": "casual_outdoor_img_1_2945",
               "url": "/gallery/casual_outdoor_green_ethnic_kurta_1.jpeg",
               "title": "Golden Hour Gaze",
-              "caption": "A soft, quiet moment captured in the gentle light of the day, featuring elegant ethnic attire.",
+              "caption": "A soft, quiet moment captured in the gentle light, where a playful expression meets the tranquil backdrop of the day. Her elegant accessories add a touch of timeless grace to this serene outdoor portrait.",
               "outfit": "green_ethnic_kurta",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "casual_outdoor_img_2_4436",
+              "id": "casual_outdoor_img_2_2949",
               "url": "/gallery/casual_outdoor_green_ethnic_kurta_2.jpeg",
               "title": "Serenity Under Open Skies",
-              "caption": "Bathed in the soft, diffused light of an afternoon sky, standing in peaceful grace.",
+              "caption": "Bathed in the soft, diffused light of an afternoon sky, she stands in peaceful grace. The gentle patterns of her attire mirror the quiet calm of the horizon.",
               "outfit": "green_ethnic_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4509",
-              "url": "/gallery/casual_outdoor_red_kurta_1.jpeg",
-              "title": "Crimson Horizon",
-              "caption": "Bathed in the gentle glow of the setting sun, a simple moment capturing the essence of tranquility.",
-              "outfit": "red_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4576",
-              "url": "/gallery/casual_outdoor_white_embroidered_kurta_1.jpeg",
-              "title": "Sun-Kissed Serenity",
-              "caption": "Golden sunlight dances on faces radiant with shared joy and gentle tranquility.",
-              "outfit": "white_embroidered_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_2_4635",
-              "url": "/gallery/casual_outdoor_white_embroidered_kurta_2.jpeg",
-              "title": "Sun-Dappled Serenity",
-              "caption": "A peaceful moment captured under the gentle gaze of the afternoon sun.",
-              "outfit": "white_embroidered_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4819",
-              "url": "/gallery/casual_outdoor_blue_floral_kurti_1.jpeg",
-              "title": "Sunlight and Serenity",
-              "caption": "Bathed in the gentle glow of late afternoon, a moment of quiet contemplation unfolds.",
-              "outfit": "blue_floral_kurti",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4843",
-              "url": "/gallery/casual_outdoor_blue_printed_kurta_1.jpeg",
-              "title": "Golden Hour Reverie",
-              "caption": "Bathed in the gentle glow of the afternoon sun, a moment of quiet contemplation unfolds.",
-              "outfit": "blue_printed_kurta",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_1_4858",
-              "url": "/gallery/casual_outdoor_fuchsia_saree_1.jpeg",
-              "title": "Sun-Dappled Grace",
-              "caption": "A moment of quiet beauty as light dances through the leaves, casting shadows on a traditional drape.",
-              "outfit": "fuchsia_saree",
               "type": "image",
               "aspect": "portrait"
             }
@@ -881,99 +525,27 @@
           "album": "Candid Moments"
         },
         {
-          "id": "festival_celebration",
-          "title": "Festival Celebration",
-          "date": "October 2024",
-          "description": "A collection from festival celebration.",
+          "id": "festival_celebration_pink_saree",
+          "title": "Festival Celebration Pink Saree",
+          "date": "Oct 2024",
+          "description": "A collection from festival celebration featuring pink saree.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "festival_celebration_img_1_4442",
+              "id": "festival_celebration_img_1_2954",
               "url": "/gallery/festival_celebration_pink_saree_1.jpeg",
               "title": "Pink Petals of Tradition",
-              "caption": "Draped in vibrant hues and adorned with timeless gold, embodying the grace of heritage.",
+              "caption": "Draped in vibrant hues and adorned with timeless gold, she embodies the grace of heritage. A picture of elegance framed by tradition and a gentle, serene smile.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "festival_celebration_img_1_4450",
-              "url": "/gallery/festival_celebration_red_saree_with_green_blouse_1.jpeg",
-              "title": "Moonlit Grace",
-              "caption": "Under the soft glow of the rising moon, wearing tradition like a gentle whisper.",
-              "outfit": "red_saree_with_green_blouse",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_1_4458",
-              "url": "/gallery/festival_celebration_orange_pink_saree_1.jpeg",
-              "title": "Sun-Kissed Grace",
-              "caption": "Radiating traditional elegance in vibrant orange and pink, harmonizing with the lush garden surroundings.",
-              "outfit": "orange_pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_4494",
-              "url": "/gallery/festival_celebration_orange_pink_saree_2.jpeg",
-              "title": "Sun-Kissed Elegance",
-              "caption": "A radiant symphony of marigold orange and deep magenta flowing like a vibrant poem in the soft, natural light.",
-              "outfit": "orange_pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_4516",
+              "id": "festival_celebration_img_2_3009",
               "url": "/gallery/festival_celebration_pink_saree_2.jpeg",
-              "title": "Radiance Under the Canopy",
-              "caption": "Draped in the elegance of vibrant silk, a graceful testament to tradition against a sun-drenched backdrop.",
-              "outfit": "pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_3_4523",
-              "url": "/gallery/festival_celebration_orange_pink_saree_3.jpeg",
-              "title": "Vibrant Traditions",
-              "caption": "Draped in the vibrant hues of tradition, standing as a picture of elegance amidst nature.",
-              "outfit": "orange_pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_3_4531",
-              "url": "/gallery/festival_celebration_pink_saree_3.jpeg",
               "title": "Grace in Magenta",
-              "caption": "Radiating elegance in a vibrant magenta drape, a timeless portrait of cultural beauty and serene poise.",
+              "caption": "Radiating elegance in a vibrant magenta drape, her grace speaks volumes through the shimmer of traditional gold. A timeless portrait of cultural beauty and serene poise.",
               "outfit": "pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_1_4687",
-              "url": "/gallery/festival_celebration_teal_silk_saree_1.jpeg",
-              "title": "Emerald Grace",
-              "caption": "Wrapped in the elegance of teal and gold, standing with a serene grace that echoes tradition.",
-              "outfit": "teal_silk_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_4695",
-              "url": "/gallery/festival_celebration_teal_silk_saree_2.jpeg",
-              "title": "Emerald Grace",
-              "caption": "Wrapped in the elegance of traditional hues, standing as a picture of serene charm.",
-              "outfit": "teal_silk_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_3_4715",
-              "url": "/gallery/festival_celebration_teal_silk_saree_3.jpeg",
-              "title": "Elegance in Teal",
-              "caption": "A soft, radiant glow mirrors the serenity of an elegantly draped teal saree.",
-              "outfit": "teal_silk_saree",
               "type": "image",
               "aspect": "portrait"
             }
@@ -982,278 +554,487 @@
           "album": "Candid Moments"
         },
         {
-          "id": "casual_day_out",
-          "title": "Casual Day Out",
-          "date": "2025",
-          "description": "A collection from casual day out.",
+          "id": "festival_celebration_red_saree",
+          "title": "Festival Celebration Red Saree",
+          "date": "Oct 2024",
+          "description": "A collection from festival celebration featuring red saree.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "casual_day_out_img_1_4540",
-              "url": "/gallery/casual_day_out_blue_printed_kurti_1.jpeg",
+              "id": "festival_celebration_img_1_2958",
+              "url": "/gallery/festival_celebration_red_saree_1.jpeg",
+              "title": "Moonlit Grace",
+              "caption": "Under the soft glow of the rising moon, she wears tradition like a gentle whisper, adorned in the vibrant hues of a classic saree. Her elegant gaze meets the twilight sky, capturing a moment of serene beauty.",
+              "outfit": "red_saree",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/festival_celebration_red_saree_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "festival_celebration_orange_pink_saree",
+          "title": "Festival Celebration Orange Pink Saree",
+          "date": "Oct 2024",
+          "description": "A collection from festival celebration featuring orange pink saree.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "festival_celebration_img_1_2963",
+              "url": "/gallery/festival_celebration_orange_pink_saree_1.jpeg",
+              "title": "Sun-Kissed Grace",
+              "caption": "Radiating traditional elegance, she stands adorned in a vibrant orange and pink saree that captures the warmth of a festive day. The intricate patterns and golden accents harmonize beautifully with the lush greenery surrounding her.",
+              "outfit": "orange_pink_saree",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "festival_celebration_img_2_2986",
+              "url": "/gallery/festival_celebration_orange_pink_saree_2.jpeg",
+              "title": "Sun-Kissed Elegance",
+              "caption": "A radiant symphony of marigold orange and deep magenta, this traditional saree flows like a vibrant poem in the soft, natural light. She stands with a serene grace, embodying the timeless beauty of cultural heritage amidst the lush green garden.",
+              "outfit": "orange_pink_saree",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "festival_celebration_img_3_3005",
+              "url": "/gallery/festival_celebration_orange_pink_saree_3.jpeg",
+              "title": "Vibrant Traditions",
+              "caption": "Draped in the vibrant hues of tradition, she stands as a picture of elegance amidst the soft green whispers of nature. The golden warmth of the orange and pink silk mirrors the joyful spirit of the festive season.",
+              "outfit": "orange_pink_saree",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/festival_celebration_orange_pink_saree_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "candid_home_white_top_jeans",
+          "title": "Candid Home White Top Jeans",
+          "date": "2025",
+          "description": "A collection from candid home featuring white top jeans.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "candid_home_img_1_2967",
+              "url": "/gallery/candid_home_white_top_jeans_1.jpeg",
+              "title": "Quiet Thursday Reflection",
+              "caption": "A soft, everyday moment captured in the stillness of home, where simple style meets a gentle gaze. There is beauty in the casual grace of a quiet afternoon.",
+              "outfit": "white_top_jeans",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "candid_home_img_2_2976",
+              "url": "/gallery/candid_home_white_top_jeans_2.jpeg",
+              "title": "Butterfly Serenity",
+              "caption": "A gentle Thursday captured in the soft glow of a mirror, where white butterflies dance across fabric and simple moments turn into quiet memories.",
+              "outfit": "white_top_jeans",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/candid_home_white_top_jeans_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "candid_home_white_top",
+          "title": "Candid Home White Top",
+          "date": "2025",
+          "description": "A collection from candid home featuring white top.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "candid_home_img_1_2971",
+              "url": "/gallery/candid_home_white_top_1.jpeg",
+              "title": "Soft Whispers of Heartache",
+              "caption": "A gentle monochrome reflection, where soft hearts drift like dreams in the quiet of a room. Time slows down in the stillness, captured in a gaze that holds both shadow and light.",
+              "outfit": "white_top",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "candid_home_img_2_2990",
+              "url": "/gallery/candid_home_white_top_2.jpeg",
+              "title": "Monochrome Whispers",
+              "caption": "A gentle, quiet moment captured in shades of gray, adorned with soft, floating hearts. The stillness of the room mirrors a thoughtful gaze, blurring the lines between a simple evening and a fleeting dream.",
+              "outfit": "white_top",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "candid_home_img_3_3041",
+              "url": "/gallery/candid_home_white_top_3.jpeg",
+              "title": "Sunlit Serenity",
+              "caption": "Bathed in the gentle glow of a sunlit afternoon, a soft smile captures a moment of quiet grace. The delicate textures and warm light weave together a portrait of peaceful elegance.",
+              "outfit": "white_top",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "candid_home_img_4_3053",
+              "url": "/gallery/candid_home_white_top_4.jpeg",
+              "title": "Sunlit Serenity",
+              "caption": "Bathed in the gentle glow of sunlight, a moment of peaceful contemplation is captured with soft elegance. The intricate texture of her attire perfectly complements the quiet, serene atmosphere of the day.",
+              "outfit": "white_top",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/candid_home_white_top_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "candid_home_white_tshirt",
+          "title": "Candid Home White Tshirt",
+          "date": "2025",
+          "description": "A collection from candid home featuring white tshirt.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "candid_home_img_1_2981",
+              "url": "/gallery/candid_home_white_tshirt_1.jpeg",
+              "title": "Monochrome Reverie",
+              "caption": "A gentle gaze captured in black and white, softened by a constellation of floating hearts that dance around the stillness of the moment.",
+              "outfit": "white_tshirt",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/candid_home_white_tshirt_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "casual_outdoor_red_kurta",
+          "title": "Casual Outdoor Red Kurta",
+          "date": "2025",
+          "description": "A collection from casual outdoor featuring red kurta.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "casual_outdoor_img_1_2996",
+              "url": "/gallery/casual_outdoor_red_kurta_1.jpeg",
+              "title": "Crimson Horizon",
+              "caption": "Bathed in the gentle glow of the setting sun, a simple moment captures the essence of tranquility and grace. Her radiant smile mirrors the warm hues of the evening sky.",
+              "outfit": "red_kurta",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/casual_outdoor_red_kurta_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "casual_outdoor_blue_kurti",
+          "title": "Casual Outdoor Blue Kurti",
+          "date": "2025",
+          "description": "A collection from casual outdoor featuring blue kurti.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "casual_outdoor_img_1_3013",
+              "url": "/gallery/casual_outdoor_blue_kurti_1.jpeg",
               "title": "A Gentle Gaze",
-              "caption": "Lost in a quiet, contemplative moment, her soft expression framed by cascading hair.",
-              "outfit": "blue_printed_kurti",
+              "caption": "Lost in a quiet, contemplative moment, her soft expression is framed by cascading hair and the gentle light of a peaceful day.",
+              "outfit": "blue_kurti",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "casual_day_out_img_2_4547",
-              "url": "/gallery/casual_day_out_blue_printed_kurti_2.jpeg",
+              "id": "casual_outdoor_img_2_3017",
+              "url": "/gallery/casual_outdoor_blue_kurti_2.jpeg",
               "title": "Sun-Kissed Serenity",
-              "caption": "Basking in the gentle embrace of afternoon light, finding a moment of quiet grace.",
-              "outfit": "blue_printed_kurti",
+              "caption": "Basking in the gentle embrace of the afternoon light, she finds a moment of quiet grace amidst the wooden pillars. Her serene expression and the soft, blurred surroundings capture a peaceful escape from the everyday.",
+              "outfit": "blue_kurti",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "casual_day_out_img_3_4556",
-              "url": "/gallery/casual_day_out_blue_printed_kurti_3.jpeg",
+              "id": "casual_outdoor_img_3_3020",
+              "url": "/gallery/casual_outdoor_blue_kurti_3.jpeg",
               "title": "Serene Solitude",
-              "caption": "A moment of quiet reflection, captured in the soft embrace of sunlight and gentle shadows.",
-              "outfit": "blue_printed_kurti",
+              "caption": "A moment of quiet reflection, captured in the soft embrace of sunlight and gentle shadows. She drifts in peaceful stillness, grounded by the simplicity of a calm, sun-drenched afternoon.",
+              "outfit": "blue_kurti",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "casual_day_out_img_1_4702",
-              "url": "/gallery/casual_day_out_olive_shirt_cap_1.jpeg",
-              "title": "Urban Serenity",
-              "caption": "Amidst the urban rush, a gentle smile brings a moment of quiet grace to the city street.",
-              "outfit": "olive_shirt_cap",
+              "id": "casual_outdoor_img_4_3160",
+              "url": "/gallery/casual_outdoor_blue_kurti_4.jpeg",
+              "title": "Sunlight and Serenity",
+              "caption": "Bathed in the gentle glow of late afternoon, a moment of quiet contemplation unfolds amidst the lush greenery. The vibrant patterns of the traditional ensemble harmonize beautifully with the serene garden backdrop.",
+              "outfit": "blue_kurti",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "casual_day_out_img_1_4709",
-              "url": "/gallery/casual_day_out_olive_top_jeans_1.jpeg",
-              "title": "Urban Reverie",
-              "caption": "Caught in a moment of quiet contemplation during an afternoon walk through the city.",
-              "outfit": "olive_top_jeans",
+              "id": "casual_outdoor_img_5_3176",
+              "url": "/gallery/casual_outdoor_blue_kurti_5.jpeg",
+              "title": "Golden Hour Reverie",
+              "caption": "Bathed in the gentle glow of the afternoon sun, a moment of quiet contemplation unfolds amidst the swaying greens. Her serene gaze meets the horizon, perfectly framed by the elegant simplicity of her patterned attire.",
+              "outfit": "blue_kurti",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/casual_day_out_blue_printed_kurti_1.jpeg",
+          "image": "/gallery/casual_outdoor_blue_kurti_1.jpeg",
           "album": "Candid Moments"
         },
         {
-          "id": "cafe_outing",
-          "title": "Cafe Outing",
+          "id": "cafe_outing_red_top",
+          "title": "Cafe Outing Red Top",
           "date": "2025",
-          "description": "A collection from cafe outing.",
+          "description": "A collection from cafe outing featuring red top.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "cafe_outing_img_1_4562",
-              "url": "/gallery/cafe_outing_red_off_shoulder_top_1.jpeg",
+              "id": "cafe_outing_img_1_3025",
+              "url": "/gallery/cafe_outing_red_top_1.jpeg",
               "title": "Crimson Radiance",
-              "caption": "Bathed in the warm glow of a cozy corner, turning a simple portrait into a timeless memory.",
-              "outfit": "red_off_shoulder_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "cafe_outing_img_1_4797",
-              "url": "/gallery/cafe_outing_burgundy_sweater_jeans_1.jpeg",
-              "title": "Reflections in the Arch",
-              "caption": "Captured in the soft glow of a sunlit café, a simple, elegant reflection of style.",
-              "outfit": "burgundy_sweater_jeans",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "cafe_outing_img_1_4833",
-              "url": "/gallery/cafe_outing_mauve_dress_1.jpeg",
-              "title": "A Bloom of Quiet Moments",
-              "caption": "A gentle smile illuminated by soft evening light, holding a bouquet of white roses.",
-              "outfit": "mauve_dress",
+              "caption": "Bathed in the warm glow of a cozy corner, a gentle smile captures the quiet magic of the moment. Her vibrant attire mirrors the lively energy of the urban backdrop, turning a simple portrait into a timeless memory.",
+              "outfit": "red_top",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/cafe_outing_red_off_shoulder_top_1.jpeg",
+          "image": "/gallery/cafe_outing_red_top_1.jpeg",
           "album": "Candid Moments"
         },
         {
-          "id": "commute",
-          "title": "Commute",
+          "id": "transit_white_top",
+          "title": "Transit White Top",
           "date": "2025",
-          "description": "A collection from commute.",
+          "description": "A collection from transit featuring white top.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "commute_img_1_4569",
-              "url": "/gallery/commute_white_ribbed_top_1.jpeg",
+              "id": "transit_img_1_3030",
+              "url": "/gallery/transit_white_top_1.jpeg",
               "title": "Optimistic Journey",
-              "caption": "A moment of quiet joy captured against a glass backdrop, radiating pure positivity.",
-              "outfit": "white_ribbed_top",
+              "caption": "A moment of quiet joy captured against a glass backdrop, where a simple thumb-up gesture radiates pure positivity and light.",
+              "outfit": "white_top",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "commute_img_2_4583",
-              "url": "/gallery/commute_white_ribbed_top_2.jpeg",
+              "id": "transit_img_2_3038",
+              "url": "/gallery/transit_white_top_2.jpeg",
               "title": "Morning Journey",
-              "caption": "A serene moment captured during a quiet commute, where the soft light catches a gentle smile.",
-              "outfit": "white_ribbed_top",
+              "caption": "A serene moment captured during a quiet commute, where the soft light catches a gentle smile. Reflections of the outside world blend with a peaceful expression in this fleeting transit portrait.",
+              "outfit": "white_top",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "commute_img_3_4597",
-              "url": "/gallery/commute_white_ribbed_top_3.jpeg",
+              "id": "transit_img_3_3045",
+              "url": "/gallery/transit_white_top_3.jpeg",
               "title": "Morning Commute Radiance",
-              "caption": "A bright, candid moment captured during a quiet transit journey, framed by soft morning light.",
-              "outfit": "white_ribbed_top",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "commute_img_1_4721",
-              "url": "/gallery/commute_olive_jacket_skirt_cap_1.jpeg",
-              "title": "Paused Reflections",
-              "caption": "A moment of quiet introspection as soft light filters through, framing a thoughtful gaze.",
-              "outfit": "olive_jacket_skirt_cap",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "commute_img_1_4728",
-              "url": "/gallery/commute_olive_jacket_cap_1.jpeg",
-              "title": "A Moment of Quiet Transit",
-              "caption": "Bathed in the soft, natural light of a station window, waiting with a graceful poise.",
-              "outfit": "olive_jacket_cap",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "commute_img_1_4736",
-              "url": "/gallery/commute_olive_shirt_dress_1.jpeg",
-              "title": "Quiet Interlude",
-              "caption": "Caught in a moment of soft reflection, poise as a serene contrast to the world passing by.",
-              "outfit": "olive_shirt_dress",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "commute_img_1_4791",
-              "url": "/gallery/commute_plaid_dress_1.jpeg",
-              "title": "Reflections of Style",
-              "caption": "Captured in a fleeting moment of quiet reflection, a classic silhouette for an everyday adventure.",
-              "outfit": "plaid_dress",
+              "caption": "A bright, candid moment captured during a quiet transit journey, framed by the soft morning light. The gentle smile and simple elegance of the day create a peaceful and reflective atmosphere.",
+              "outfit": "white_top",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/commute_white_ribbed_top_1.jpeg",
+          "image": "/gallery/transit_white_top_1.jpeg",
           "album": "Candid Moments"
         },
         {
-          "id": "wedding_festivities",
-          "title": "Wedding Festivities",
-          "date": "2025",
-          "description": "A collection from wedding festivities.",
+          "id": "casual_outdoor_white_kurta",
+          "title": "Casual Outdoor White Kurta",
+          "date": "Feb 2025",
+          "description": "A collection from casual outdoor featuring white kurta.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "wedding_festivities_img_1_4619",
-              "url": "/gallery/wedding_festivities_black_gold_lehenga_1.jpeg",
+              "id": "casual_outdoor_img_1_3034",
+              "url": "/gallery/casual_outdoor_white_kurta_1.jpeg",
+              "title": "Sun-Kissed Serenity",
+              "caption": "Golden sunlight dances on faces radiant with shared joy and gentle tranquility. A peaceful moment frozen under the open sky, framed by the quiet grace of traditional elegance.",
+              "outfit": "white_kurta",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "casual_outdoor_img_2_3067",
+              "url": "/gallery/casual_outdoor_white_kurta_2.jpeg",
+              "title": "Sun-Dappled Serenity",
+              "caption": "A peaceful moment captured under the gentle gaze of the afternoon sun, where simple elegance meets the quiet charm of a garden corner. The soft interplay of light and shadow highlights a serene grace amidst the everyday landscape.",
+              "outfit": "white_kurta",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/casual_outdoor_white_kurta_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "candid_home_white_kurta",
+          "title": "Candid Home White Kurta",
+          "date": "2025",
+          "description": "A collection from candid home featuring white kurta.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "candid_home_img_1_3049",
+              "url": "/gallery/candid_home_white_kurta_1.jpeg",
+              "title": "Sunlit Serenity",
+              "caption": "A moment of quiet grace caught in the soft light of home, where every detail hums with simplicity and warmth.",
+              "outfit": "white_kurta",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/candid_home_white_kurta_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "evening_party_black_lehenga",
+          "title": "Evening Party Black Lehenga",
+          "date": "Dec 2024",
+          "description": "A collection from evening party featuring black lehenga.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "evening_party_img_1_3056",
+              "url": "/gallery/evening_party_black_lehenga_1.jpeg",
               "title": "Golden Hour Elegance",
-              "caption": "Swathed in the shimmer of golden light and ornate patterns, ascending toward the celebration with grace.",
-              "outfit": "black_gold_lehenga",
+              "caption": "Swathed in the shimmer of golden light and ornate patterns, she ascends toward the celebration with grace. The contrast of the dark, intricate lehenga against the warm, flowing drapes creates a scene of timeless ethnic beauty.",
+              "outfit": "black_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "wedding_festivities_img_1_4628",
-              "url": "/gallery/wedding_festivities_golden_sheer_lehenga_1.jpeg",
+              "id": "evening_party_img_2_3071",
+              "url": "/gallery/evening_party_black_lehenga_2.jpeg",
               "title": "Golden Hour Glow",
-              "caption": "Wrapped in the ethereal shimmer of golden light, dancing through the evening air.",
-              "outfit": "golden_sheer_lehenga",
+              "caption": "Bathed in the warm, ethereal glow of fairy lights, she carries an aura of grace and quiet elegance. The delicate gold fabric dances with the evening breeze, capturing a moment of serene beauty.",
+              "outfit": "black_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "wedding_festivities_img_2_4642",
-              "url": "/gallery/wedding_festivities_black_gold_lehenga_2.jpeg",
+              "id": "evening_party_img_3_3083",
+              "url": "/gallery/evening_party_black_lehenga_3.jpeg",
               "title": "Golden Hour Glow",
-              "caption": "Bathed in the warm, ethereal glow of fairy lights, carrying an aura of grace and quiet elegance.",
-              "outfit": "black_gold_lehenga",
+              "caption": "Draped in shimmer and starlight, the evening breeze whispers through golden hues. A moment captured where elegance meets the soft glow of twilight.",
+              "outfit": "black_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "wedding_festivities_img_3_4651",
-              "url": "/gallery/wedding_festivities_black_gold_lehenga_3.jpeg",
-              "title": "Gilded Grace",
-              "caption": "Wrapped in the golden glow of evening lights, carrying the timeless elegance of tradition.",
-              "outfit": "black_gold_lehenga",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "wedding_festivities_img_4_4658",
-              "url": "/gallery/wedding_festivities_black_gold_lehenga_4.jpeg",
-              "title": "Glimmer in Motion",
-              "caption": "Captured in a fleeting moment of joy, the night shimmers as brightly as her spirited smile.",
-              "outfit": "black_gold_lehenga",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "wedding_festivities_img_5_4665",
-              "url": "/gallery/wedding_festivities_black_gold_lehenga_5.jpeg",
-              "title": "Golden Hour Glow",
-              "caption": "Draped in shimmer and starlight, a moment captured where elegance meets the soft glow of twilight.",
-              "outfit": "black_gold_lehenga",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "wedding_festivities_img_6_4672",
-              "url": "/gallery/wedding_festivities_black_gold_lehenga_6.jpeg",
+              "id": "evening_party_img_4_3086",
+              "url": "/gallery/evening_party_black_lehenga_4.jpeg",
               "title": "Golden Hour Elegance",
-              "caption": "A silhouette of grace adorned in shimmering brocade, standing amidst the timeless allure of golden drapes.",
-              "outfit": "black_gold_lehenga",
+              "caption": "A silhouette of grace adorned in shimmering brocade, standing amidst the timeless allure of golden drapes and stone steps. The rich tapestry of the lehenga echoes a classic charm that transcends the evening.",
+              "outfit": "black_lehenga",
               "type": "image",
               "aspect": "portrait"
             },
             {
-              "id": "wedding_festivities_img_7_4680",
-              "url": "/gallery/wedding_festivities_black_gold_lehenga_7.jpeg",
+              "id": "evening_party_img_5_3089",
+              "url": "/gallery/evening_party_black_lehenga_5.jpeg",
               "title": "Golden Hour Grace",
-              "caption": "Draped in elegance and golden light, standing as a portrait of poise amidst festive splendor.",
-              "outfit": "black_gold_lehenga",
+              "caption": "Draped in elegance and golden light, she stands as a portrait of poise amidst the festive splendor. Every detail of her attire mirrors the soft, shimmering glow of the evening.",
+              "outfit": "black_lehenga",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/wedding_festivities_black_gold_lehenga_1.jpeg",
+          "image": "/gallery/evening_party_black_lehenga_1.jpeg",
           "album": "Candid Moments"
         },
         {
-          "id": "birthday_celebration",
-          "title": "Birthday Celebration",
-          "date": "2025",
-          "description": "A collection from birthday celebration.",
+          "id": "evening_party_golden_lehenga",
+          "title": "Evening Party Golden Lehenga",
+          "date": "Dec 2024",
+          "description": "A collection from evening party featuring golden lehenga.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "birthday_celebration_img_1_4743",
+              "id": "evening_party_img_1_3062",
+              "url": "/gallery/evening_party_golden_lehenga_1.jpeg",
+              "title": "Golden Hour Glow",
+              "caption": "Wrapped in the ethereal shimmer of golden light, she dances through the evening air, her joyful smile mirroring the twinkling fairy lights that frame her graceful silhouette.",
+              "outfit": "golden_lehenga",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "evening_party_img_2_3075",
+              "url": "/gallery/evening_party_golden_lehenga_2.jpeg",
+              "title": "Gilded Grace",
+              "caption": "Wrapped in the golden glow of evening lights, she carries the timeless elegance of tradition with a gentle, serene smile.",
+              "outfit": "golden_lehenga",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "evening_party_img_3_3080",
+              "url": "/gallery/evening_party_golden_lehenga_3.jpeg",
+              "title": "Glimmer in Motion",
+              "caption": "Captured in a fleeting moment of joy, her sheer golden drape dances with the evening lights. The night shimmers as brightly as her spirited smile.",
+              "outfit": "golden_lehenga",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/evening_party_golden_lehenga_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "festival_celebration_teal_saree",
+          "title": "Festival Celebration Teal Saree",
+          "date": "Oct 2024",
+          "description": "A collection from festival celebration featuring teal saree.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "festival_celebration_img_1_3092",
+              "url": "/gallery/festival_celebration_teal_saree_1.jpeg",
+              "title": "Emerald Grace",
+              "caption": "Wrapped in the elegance of teal and gold, she stands with a serene grace that echoes the timeless beauty of tradition. A quiet moment of poise, reflecting both charm and sophistication.",
+              "outfit": "teal_saree",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "festival_celebration_img_2_3096",
+              "url": "/gallery/festival_celebration_teal_saree_2.jpeg",
+              "title": "Emerald Grace",
+              "caption": "Wrapped in the elegance of traditional hues, she stands as a picture of serene charm against a quiet corner. The golden motifs on her teal saree catch the soft light, reflecting a timeless, festive glow.",
+              "outfit": "teal_saree",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "festival_celebration_img_3_3107",
+              "url": "/gallery/festival_celebration_teal_saree_3.jpeg",
+              "title": "Elegance in Teal",
+              "caption": "A soft, radiant glow mirrors the serenity of an elegantly draped teal saree. Every detail whispers of grace and timeless tradition.",
+              "outfit": "teal_saree",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/festival_celebration_teal_saree_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "birthday_celebration_pink_dress",
+          "title": "Birthday Celebration Pink Dress",
+          "date": "2025",
+          "description": "A collection from birthday celebration featuring pink dress.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "birthday_celebration_img_1_3122",
               "url": "/gallery/birthday_celebration_pink_dress_1.jpeg",
               "title": "Coming of Age",
-              "caption": "A delicate tribute to twenty-one, marking the passage of time with elegance.",
+              "caption": "A delicate tribute to twenty-one, capturing the soft glow of a milestone celebration. Dressed in blush, she marks the passage of time with elegance and quiet anticipation.",
               "outfit": "pink_dress",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "birthday_celebration_img_1_4771",
-              "url": "/gallery/birthday_celebration_pink_top_pearls_1.jpeg",
-              "title": "Coming of Age",
-              "caption": "Celebrating a milestone with elegance and a touch of soft pink charm.",
-              "outfit": "pink_top_pearls",
               "type": "image",
               "aspect": "portrait"
             }
@@ -1262,23 +1043,241 @@
           "album": "Candid Moments"
         },
         {
-          "id": "workshop",
-          "title": "Workshop",
+          "id": "candid_home_pink_top",
+          "title": "Candid Home Pink Top",
           "date": "2025",
-          "description": "A collection from workshop.",
+          "description": "A collection from candid home featuring pink top.",
           "aspect": "portrait",
           "images": [
             {
-              "id": "workshop_img_1_4757",
-              "url": "/gallery/workshop_printed_jumpsuit_1.jpeg",
-              "title": "Earth's Gentle Sculptor",
-              "caption": "With hands dusted in clay and a radiant smile, the workshop hums with creative quietude.",
-              "outfit": "printed_jumpsuit",
+              "id": "candid_home_img_1_3126",
+              "url": "/gallery/candid_home_pink_top_1.jpeg",
+              "title": "A Gentle Digital Glance",
+              "caption": "A soft, candid moment captured in the quiet glow of an indoor space, where a warm smile meets the simplicity of a digital connection.",
+              "outfit": "pink_top",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "candid_home_img_2_3133",
+              "url": "/gallery/candid_home_pink_top_2.jpeg",
+              "title": "A Moment of Quiet Elegance",
+              "caption": "Bathed in soft light, a gentle smile captures a serene, contemplative moment, accented by the timeless grace of pearls.",
+              "outfit": "pink_top",
+              "type": "image",
+              "aspect": "portrait"
+            },
+            {
+              "id": "candid_home_img_3_3142",
+              "url": "/gallery/candid_home_pink_top_3.jpeg",
+              "title": "Quiet Moments of Joy",
+              "caption": "Caught in a sweet digital reverie, her genuine smile reflects the warmth of a peaceful moment. The delicate glow of pearls mirrors the softness of her expression as she scrolls through her day.",
+              "outfit": "pink_top",
               "type": "image",
               "aspect": "portrait"
             }
           ],
-          "image": "/gallery/workshop_printed_jumpsuit_1.jpeg",
+          "image": "/gallery/candid_home_pink_top_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "workshop_jumpsuit",
+          "title": "Workshop Jumpsuit",
+          "date": "2025",
+          "description": "A collection from workshop featuring jumpsuit.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "workshop_img_1_3129",
+              "url": "/gallery/workshop_jumpsuit_1.jpeg",
+              "title": "Earth's Gentle Sculptor",
+              "caption": "With hands dusted in clay and a radiant smile, she cradles her latest creations as the workshop hums with creative quietude. Every curve of the wet earth reflects the artistry born from a moment of patient focus.",
+              "outfit": "jumpsuit",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/workshop_jumpsuit_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "birthday_celebration_pink_top",
+          "title": "Birthday Celebration Pink Top",
+          "date": "2025",
+          "description": "A collection from birthday celebration featuring pink top.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "birthday_celebration_img_1_3136",
+              "url": "/gallery/birthday_celebration_pink_top_1.jpeg",
+              "title": "Coming of Age",
+              "caption": "Celebrating a milestone with elegance and a touch of soft pink charm. Every year is a beautiful chapter unfolding with grace.",
+              "outfit": "pink_top",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/birthday_celebration_pink_top_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "evening_party_checkered_dress",
+          "title": "Evening Party Checkered Dress",
+          "date": "Dec 2025",
+          "description": "A collection from evening party featuring checkered dress.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "evening_party_img_1_3139",
+              "url": "/gallery/evening_party_checkered_dress_1.jpeg",
+              "title": "Twilight Reflections",
+              "caption": "Under the soft, ambient glow of twilight, the serene poolside atmosphere mirrors the quiet grace of the evening. A perfect moment where stillness and elegance meet.",
+              "outfit": "checkered_dress",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/evening_party_checkered_dress_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "transit_checkered_dress",
+          "title": "Transit Checkered Dress",
+          "date": "2025",
+          "description": "A collection from transit featuring checkered dress.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "transit_img_1_3146",
+              "url": "/gallery/transit_checkered_dress_1.jpeg",
+              "title": "Reflections of Style",
+              "caption": "Captured in a fleeting moment of quiet reflection, a classic plaid silhouette meets the soft glow of a shared space. A timeless look for an everyday adventure.",
+              "outfit": "checkered_dress",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/transit_checkered_dress_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "cafe_outing_burgundy_sweater",
+          "title": "Cafe Outing Burgundy Sweater",
+          "date": "Dec 2025",
+          "description": "A collection from cafe outing featuring burgundy sweater.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "cafe_outing_img_1_3149",
+              "url": "/gallery/cafe_outing_burgundy_sweater_1.jpeg",
+              "title": "Reflections in the Arch",
+              "caption": "Captured in the soft glow of a sunlit café, where the mirror frames a moment of quiet grace amidst the verdant decor. A simple, elegant reflection of style and serenity.",
+              "outfit": "burgundy_sweater",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/cafe_outing_burgundy_sweater_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "rooftop_evening_checkered_jumpsuit",
+          "title": "Rooftop Evening Checkered Jumpsuit",
+          "date": "2025",
+          "description": "A collection from rooftop evening featuring checkered jumpsuit.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "rooftop_evening_img_1_3152",
+              "url": "/gallery/rooftop_evening_checkered_jumpsuit_1.jpeg",
+              "title": "City Lights and Midnight Air",
+              "caption": "Under the soft glow of the city skyline, a moment of quiet grace unfolds. The gentle breeze and the rhythmic hum of the urban night create the perfect backdrop for a serene evening.",
+              "outfit": "checkered_jumpsuit",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/rooftop_evening_checkered_jumpsuit_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "candid_home_olive_top",
+          "title": "Candid Home Olive Top",
+          "date": "2025",
+          "description": "A collection from candid home featuring olive top.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "candid_home_img_1_3164",
+              "url": "/gallery/candid_home_olive_top_1.jpeg",
+              "title": "Quiet Radiance",
+              "caption": "A moment of serene beauty captured in the soft light of home, reflecting a calm and gentle spirit. Her smile is as warm as the earthy tones she wears, bringing a peaceful glow to the day.",
+              "outfit": "olive_top",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/candid_home_olive_top_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "cafe_outing_mauve_dress",
+          "title": "Cafe Outing Mauve Dress",
+          "date": "2025",
+          "description": "A collection from cafe outing featuring mauve dress.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "cafe_outing_img_1_3169",
+              "url": "/gallery/cafe_outing_mauve_dress_1.jpeg",
+              "title": "A Bloom of Quiet Moments",
+              "caption": "A gentle smile illuminated by soft evening light, holding a bouquet of white roses that mirror the serenity of the night. A candid pause in the heart of a vibrant space, where beauty and stillness bloom together.",
+              "outfit": "mauve_dress",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/cafe_outing_mauve_dress_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "casual_outdoor_fuchsia_saree",
+          "title": "Casual Outdoor Fuchsia Saree",
+          "date": "2025",
+          "description": "A collection from casual outdoor featuring fuchsia saree.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "casual_outdoor_img_1_3182",
+              "url": "/gallery/casual_outdoor_fuchsia_saree_1.jpeg",
+              "title": "Sun-Dappled Grace",
+              "caption": "A moment of quiet beauty as light dances through the leaves, casting soft shadows upon a vibrant traditional drape. Her gentle gesture captures a fleeting second of serene, sunlit elegance.",
+              "outfit": "fuchsia_saree",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/casual_outdoor_fuchsia_saree_1.jpeg",
+          "album": "Candid Moments"
+        },
+        {
+          "id": "candid_home_teal_saree",
+          "title": "Candid Home Teal Saree",
+          "date": "2025",
+          "description": "A collection from candid home featuring teal saree.",
+          "aspect": "portrait",
+          "images": [
+            {
+              "id": "candid_home_img_1_3186",
+              "url": "/gallery/candid_home_teal_saree_1.jpeg",
+              "title": "Ethereal Grace",
+              "caption": "Draped in shades of teal and gold, she glows with a gentle, timeless elegance. A quiet moment of joy captured in the soft light of home.",
+              "outfit": "teal_saree",
+              "type": "image",
+              "aspect": "portrait"
+            }
+          ],
+          "image": "/gallery/candid_home_teal_saree_1.jpeg",
           "album": "Candid Moments"
         }
       ]
