@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Row, useIsMobile } from "@/components/Row";
 import { Slideshow } from "@/components/Slideshow";
 import { Footer } from "@/components/Footer";
-import { getAlbums, getFeatured, type Album, type GalleryItem } from "@/lib/gallery";
+import { getAlbums, resolveUrl, type Album, type GalleryItem } from "@/lib/gallery";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -13,10 +13,63 @@ export const Route = createFileRoute("/")({
 
 const AUTO_SCROLL_ALBUMS = new Set(["portraits", "candid", "travel"]);
 
+const FEATURED_POOL = [
+  {
+    id: "wedding_festivities",
+    title: "Wedding Festivities",
+    description: "Capturing the elegance and grandeur of wedding celebrations, highlighting the beautiful traditional attire.",
+    image: "/gallery/wedding_festivities_black_gold_lehenga_1.jpeg",
+    year: "2024",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "candid_home",
+    title: "Candid Home",
+    description: "Quiet, peaceful moments captured in the warmth and comfort of home.",
+    image: "/gallery/candid_home_pink_top_pearls_1.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "casual_day_out",
+    title: "Casual Day Out",
+    description: "Stepping out to enjoy the daylight in vibrant, simple, and comfortable outfits.",
+    image: "/gallery/casual_day_out_blue_printed_kurti_2.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "video_clips",
+    title: "Moment in Motion",
+    description: "A beautiful memory captured dynamically in video.",
+    image: "/gallery/video_clips_video_2.mp4",
+    year: "2025",
+    tag: "Featured Video"
+  },
+  {
+    id: "video_clips",
+    title: "Candid Laughter",
+    description: "Capturing real emotion, smiles, and stories told in motion.",
+    image: "/gallery/video_clips_video_7.mp4",
+    year: "2025",
+    tag: "Featured Video"
+  }
+];
+
 function Index() {
-  const featured = getFeatured();
   const albums = getAlbums();
   const isMobile = useIsMobile();
+  
+  // Pick a random featured item from the user's highlighted pool on mount
+  const [featured] = useState(() => {
+    const randomIndex = Math.floor(Math.random() * FEATURED_POOL.length);
+    const item = FEATURED_POOL[randomIndex];
+    return {
+      ...item,
+      image: resolveUrl(item.image)
+    };
+  });
+  
   const [openItemState, setOpenItemState] = useState<GalleryItem | null>(null);
 
   const openItem = (item: GalleryItem) => {
@@ -24,18 +77,24 @@ function Index() {
   };
 
   const openFeaturedSlideshow = () => {
-    // Find if featured has images, or find the first album item
-    if (featured.images && featured.images.length > 0) {
-      setOpenItemState({
-        id: featured.id,
-        title: featured.title,
-        description: featured.description,
-        date: featured.year,
-        album: featured.tag,
-        image: featured.image,
-        aspect: "landscape",
-        images: featured.images
-      });
+    // If the active featured item is a video, open the video_clips slideshow
+    if (featured.image.endsWith(".mp4")) {
+      const videoItem = albums
+        .find(a => a.slug === "videos")
+        ?.items.find(item => item.id === "video_clips");
+      if (videoItem) {
+        setOpenItemState(videoItem);
+        return;
+      }
+    }
+
+    // Otherwise, open the matching occasion card
+    const matchingItem = albums
+      .flatMap(a => a.items)
+      .find(item => item.id === featured.id);
+    
+    if (matchingItem) {
+      setOpenItemState(matchingItem);
     } else {
       const first = albums[0]?.items[0];
       if (first) setOpenItemState(first);

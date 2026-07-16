@@ -51,15 +51,15 @@ export interface Person {
 // Example: "https://ik.imagekit.io/your_imagekit_id"
 const IMAGEKIT_ENDPOINT = (import.meta.env.VITE_IMAGEKIT_ENDPOINT as string) || "";
 
+export const resolveUrl = (url: string): string => {
+  if (IMAGEKIT_ENDPOINT && url && url.startsWith("/gallery/")) {
+    return `${IMAGEKIT_ENDPOINT}${url}`;
+  }
+  return url;
+};
+
 const transformData = (raw: typeof data) => {
   const cloned = JSON.parse(JSON.stringify(raw));
-  
-  const resolveUrl = (url: string): string => {
-    if (IMAGEKIT_ENDPOINT && url && url.startsWith("/gallery/")) {
-      return `${IMAGEKIT_ENDPOINT}${url}`;
-    }
-    return url;
-  };
 
   if (cloned.featured) {
     cloned.featured.image = resolveUrl(cloned.featured.image);
