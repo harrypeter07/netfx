@@ -129,24 +129,6 @@
               "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_3_2937",
-              "url": "/gallery/evening_party_green_lehenga_3.jpeg",
-              "title": "Glimmering Twilight",
-              "caption": "Radiating soft grace amidst a cascade of shimmering fairy lights, she captures the magical essence of a star-lit evening.",
-              "outfit": "green_lehenga",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_4_2941",
-              "url": "/gallery/evening_party_green_lehenga_4.jpeg",
-              "title": "Glow of the Evening",
-              "caption": "Radiating elegance amidst a tapestry of shimmering lights, she stands as the graceful centerpiece of the night. A quiet moment captured in soft luminescence, where elegance meets the gentle glow of celebration.",
-              "outfit": "green_lehenga",
-              "type": "image",
-              "aspect": "portrait"
             }
           ],
           "image": "/gallery/evening_party_green_lehenga_1.jpeg",
@@ -193,15 +175,6 @@
               "url": "/gallery/festival_celebration_pink_saree_1.jpeg",
               "title": "Pink Petals of Tradition",
               "caption": "Draped in vibrant hues and adorned with timeless gold, she embodies the grace of heritage. A picture of elegance framed by tradition and a gentle, serene smile.",
-              "outfit": "pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_3009",
-              "url": "/gallery/festival_celebration_pink_saree_2.jpeg",
-              "title": "Grace in Magenta",
-              "caption": "Radiating elegance in a vibrant magenta drape, her grace speaks volumes through the shimmer of traditional gold. A timeless portrait of cultural beauty and serene poise.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
@@ -254,15 +227,6 @@
             {
               "id": "video_clips_img_4_3202",
               "url": "/gallery/video_clips_video_4.mp4",
-              "title": "Memory in Motion",
-              "caption": "A beautiful memory captured in video.",
-              "outfit": "video",
-              "type": "video",
-              "aspect": "landscape"
-            },
-            {
-              "id": "video_clips_img_5_3216",
-              "url": "/gallery/video_clips_video_5.mp4",
               "title": "Memory in Motion",
               "caption": "A beautiful memory captured in video.",
               "outfit": "video",
@@ -472,24 +436,6 @@
               "outfit": "green_lehenga",
               "type": "image",
               "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_3_2937",
-              "url": "/gallery/evening_party_green_lehenga_3.jpeg",
-              "title": "Glimmering Twilight",
-              "caption": "Radiating soft grace amidst a cascade of shimmering fairy lights, she captures the magical essence of a star-lit evening.",
-              "outfit": "green_lehenga",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "evening_party_img_4_2941",
-              "url": "/gallery/evening_party_green_lehenga_4.jpeg",
-              "title": "Glow of the Evening",
-              "caption": "Radiating elegance amidst a tapestry of shimmering lights, she stands as the graceful centerpiece of the night. A quiet moment captured in soft luminescence, where elegance meets the gentle glow of celebration.",
-              "outfit": "green_lehenga",
-              "type": "image",
-              "aspect": "portrait"
             }
           ],
           "image": "/gallery/evening_party_green_lehenga_1.jpeg",
@@ -536,15 +482,6 @@
               "url": "/gallery/festival_celebration_pink_saree_1.jpeg",
               "title": "Pink Petals of Tradition",
               "caption": "Draped in vibrant hues and adorned with timeless gold, she embodies the grace of heritage. A picture of elegance framed by tradition and a gentle, serene smile.",
-              "outfit": "pink_saree",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "festival_celebration_img_2_3009",
-              "url": "/gallery/festival_celebration_pink_saree_2.jpeg",
-              "title": "Grace in Magenta",
-              "caption": "Radiating elegance in a vibrant magenta drape, her grace speaks volumes through the shimmer of traditional gold. A timeless portrait of cultural beauty and serene poise.",
               "outfit": "pink_saree",
               "type": "image",
               "aspect": "portrait"
@@ -688,26 +625,6 @@
           "album": "Candid Moments"
         },
         {
-          "id": "candid_home_white_tshirt",
-          "title": "Candid Home White Tshirt",
-          "date": "2025",
-          "description": "A collection from candid home featuring white tshirt.",
-          "aspect": "portrait",
-          "images": [
-            {
-              "id": "candid_home_img_1_2981",
-              "url": "/gallery/candid_home_white_tshirt_1.jpeg",
-              "title": "Monochrome Reverie",
-              "caption": "A gentle gaze captured in black and white, softened by a constellation of floating hearts that dance around the stillness of the moment.",
-              "outfit": "white_tshirt",
-              "type": "image",
-              "aspect": "portrait"
-            }
-          ],
-          "image": "/gallery/candid_home_white_tshirt_1.jpeg",
-          "album": "Candid Moments"
-        },
-        {
           "id": "casual_outdoor_red_kurta",
           "title": "Casual Outdoor Red Kurta",
           "date": "2025",
@@ -748,15 +665,6 @@
               "url": "/gallery/casual_outdoor_blue_kurti_2.jpeg",
               "title": "Sun-Kissed Serenity",
               "caption": "Basking in the gentle embrace of the afternoon light, she finds a moment of quiet grace amidst the wooden pillars. Her serene expression and the soft, blurred surroundings capture a peaceful escape from the everyday.",
-              "outfit": "blue_kurti",
-              "type": "image",
-              "aspect": "portrait"
-            },
-            {
-              "id": "casual_outdoor_img_3_3020",
-              "url": "/gallery/casual_outdoor_blue_kurti_3.jpeg",
-              "title": "Serene Solitude",
-              "caption": "A moment of quiet reflection, captured in the soft embrace of sunlight and gentle shadows. She drifts in peaceful stillness, grounded by the simplicity of a calm, sun-drenched afternoon.",
               "outfit": "blue_kurti",
               "type": "image",
               "aspect": "portrait"

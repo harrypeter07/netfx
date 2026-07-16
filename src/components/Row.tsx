@@ -1,17 +1,19 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import type { Album, GalleryItem } from "@/lib/gallery";
+import type { MediaItem, Layout } from "@/lib/gallery";
 import { Card } from "./Card";
 
 interface RowProps {
-  album: Album;
-  onOpen: (item: GalleryItem) => void;
+  title: string;
+  items: MediaItem[];
+  layout: Layout;
+  onOpenCard: (index: number) => void;
   isMobile: boolean;
   autoScroll?: boolean;
 }
 
-export function Row({ album, onOpen, isMobile, autoScroll = false }: RowProps) {
+export function Row({ title, items, layout, onOpenCard, isMobile, autoScroll = false }: RowProps) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -22,8 +24,6 @@ export function Row({ album, onOpen, isMobile, autoScroll = false }: RowProps) {
     el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
   };
 
-  // Auto-scroll marquee: seamlessly loop by using duplicated items and
-  // wrapping scrollLeft when we cross the halfway point.
   useEffect(() => {
     if (!autoScroll) return;
     const el = scrollerRef.current;
@@ -45,7 +45,7 @@ export function Row({ album, onOpen, isMobile, autoScroll = false }: RowProps) {
     return () => cancelAnimationFrame(raf);
   }, [autoScroll, paused]);
 
-  const items = autoScroll ? [...album.items, ...album.items] : album.items;
+  const displayItems = autoScroll ? [...items, ...items] : items;
 
   return (
     <section
@@ -62,10 +62,10 @@ export function Row({ album, onOpen, isMobile, autoScroll = false }: RowProps) {
       onTouchEnd={() => setPaused(false)}
     >
       <h2
-        className="mb-2 px-4 text-base font-bold md:mb-3 md:px-12 md:text-[22px]"
-        style={{ color: "var(--row-title)" }}
+        className="mb-2 px-4 text-base font-bold md:mb-3 md:px-12 md:text-[20px] text-white/90"
+        style={{ letterSpacing: "-0.01em" }}
       >
-        {album.title}
+        {title}
       </h2>
 
       <div className="relative">
@@ -82,7 +82,7 @@ export function Row({ album, onOpen, isMobile, autoScroll = false }: RowProps) {
 
         <motion.div
           ref={scrollerRef}
-          className="no-scrollbar touch-scroll flex gap-2 overflow-x-scroll px-4 md:gap-1.5 md:px-12"
+          className="no-scrollbar touch-scroll flex gap-2 overflow-x-scroll px-4 md:gap-2.5 md:px-12"
           style={{
             scrollSnapType: isMobile && !autoScroll ? "x mandatory" : "none",
             scrollBehavior: autoScroll ? "auto" : "smooth",
@@ -96,7 +96,7 @@ export function Row({ album, onOpen, isMobile, autoScroll = false }: RowProps) {
             visible: { transition: { staggerChildren: 0.05 } },
           }}
         >
-          {items.map((item, idx) => (
+          {displayItems.map((item, idx) => (
             <motion.div
               key={`${item.id}-${idx}`}
               variants={{
@@ -109,8 +109,8 @@ export function Row({ album, onOpen, isMobile, autoScroll = false }: RowProps) {
             >
               <Card
                 item={item}
-                layout={album.layout}
-                onOpen={onOpen}
+                layout={layout}
+                onOpen={() => onOpenCard(idx)}
                 isMobile={isMobile}
               />
             </motion.div>

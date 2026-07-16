@@ -6,21 +6,22 @@ import type { GalleryItem, MediaItem } from "@/lib/gallery";
 interface SlideshowProps {
   item: GalleryItem | null;
   onClose: () => void;
+  startIndex?: number;
 }
 
-export function Slideshow({ item, onClose }: SlideshowProps) {
-  const [index, setIndex] = useState(0);
+export function Slideshow({ item, onClose, startIndex = 0 }: SlideshowProps) {
+  const [index, setIndex] = useState(startIndex);
   const [playing, setPlaying] = useState(true);
   const [dir, setDir] = useState<1 | -1>(1);
 
-  // Reset state when a new gallery item (occasion) is opened
+  // Reset state when a new gallery item (occasion) is opened or start index changes
   useEffect(() => {
     if (item) {
-      setIndex(0);
+      setIndex(startIndex);
       setPlaying(true);
       setDir(1);
     }
-  }, [item]);
+  }, [item, startIndex]);
 
   const next = useCallback(() => {
     if (!item || !item.images.length) return;

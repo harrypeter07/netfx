@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Info, Plus } from "lucide-react";
-import type { GalleryItem, Layout } from "@/lib/gallery";
+import { motion, AnimatePresence } from "react-transition-group"; // Wait: we don't need react-transition-group, we can use framer-motion AnimatePresence
+import { motion as motionChild, AnimatePresence as FramerAnimatePresence } from "framer-motion";
+import { Heart, Info, Plus, Play } from "lucide-react";
+import type { MediaItem, Layout } from "@/lib/gallery";
 
 interface CardProps {
-  item: GalleryItem;
+  item: MediaItem;
   layout: Layout;
-  onOpen: (item: GalleryItem) => void;
+  onOpen: () => void;
   isMobile: boolean;
 }
 
@@ -33,42 +34,48 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
   );
 
   return (
-    <motion.div
+    <motionChild.div
       className="relative shrink-0"
       style={{
         width: isMobile ? 128 : layout === "portrait" ? 200 : 240,
       }}
       onMouseEnter={beginHover}
       onMouseLeave={endHover}
-      onClick={() => onOpen(item)}
+      onClick={onOpen}
     >
-      <motion.div
+      <motionChild.div
         animate={
           hovered
             ? {
-                scale: 1.4,
+                scale: 1.35,
                 zIndex: 40,
                 boxShadow: "0 12px 30px rgba(0,0,0,0.7)",
               }
             : { scale: 1, zIndex: 1, boxShadow: "0 0 0 rgba(0,0,0,0)" }
         }
         transition={{ type: "spring", stiffness: 300, damping: 24 }}
-        className="relative origin-center cursor-pointer overflow-hidden rounded-[4px] bg-[#2a2a2a]"
+        className="relative origin-center cursor-pointer overflow-hidden rounded-[4px] bg-[#2a2a2a] border border-white/5"
       >
         <div className={`relative ${aspect} w-full overflow-hidden`}>
-          {!loaded && <div className="shimmer absolute inset-0" />}
+          {!loaded && <div className="shimmer absolute inset-0 bg-[#333]" />}
           <img
-            src={item.image}
+            src={item.url}
             alt={item.title}
             loading="lazy"
             onLoad={() => setLoaded(true)}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-opacity duration-300"
+            style={{ opacity: loaded ? 1 : 0 }}
           />
+          {item.type === "video" && (
+            <div className="absolute bottom-2 right-2 z-10 rounded-full bg-black/60 p-1 text-white border border-white/10">
+              <Play className="h-2.5 w-2.5 fill-white" />
+            </div>
+          )}
         </div>
 
-        <AnimatePresence>
+        <FramerAnimatePresence>
           {hovered && !isMobile && (
-            <motion.div
+            <motionChild.div
               initial={{ opacity: 0, y: -4 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
@@ -87,14 +94,14 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
                 </IconBtn>
               </div>
               <p className="truncate text-[11px] font-semibold text-white">{item.title}</p>
-              <p className="text-[10px]" style={{ color: "var(--meta)" }}>
-                {item.date} · {item.images?.length || 0} {item.images?.length === 1 ? 'item' : 'items'}
+              <p className="text-[10px] capitalize" style={{ color: "var(--meta)" }}>
+                {item.outfit.replace(/_/g, " ")} · {item.type === "video" ? "Video" : "Photo"}
               </p>
-            </motion.div>
+            </motionChild.div>
           )}
-        </AnimatePresence>
-      </motion.div>
-    </motion.div>
+        </FramerAnimatePresence>
+      </motionChild.div>
+    </motionChild.div>
   );
 }
 

@@ -5,13 +5,11 @@ import { Hero } from "@/components/Hero";
 import { Row, useIsMobile } from "@/components/Row";
 import { Slideshow } from "@/components/Slideshow";
 import { Footer } from "@/components/Footer";
-import { getAlbums, resolveUrl, type Album, type GalleryItem } from "@/lib/gallery";
+import { getAlbums, resolveUrl, type GalleryItem, type MediaItem } from "@/lib/gallery";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
-
-const AUTO_SCROLL_ALBUMS = new Set(["portraits", "candid", "travel"]);
 
 const FEATURED_POOL = [
   {
@@ -60,11 +58,21 @@ function Index() {
   const albums = getAlbums();
   const isMobile = useIsMobile();
   
+  // Pick a random featured item from the user's highlighted pool on mount
+  const [featured] = useState(() => {
+    const randomIndex = Math.floor(Math.random() * FEATURED_POOL.length);
+    const item = FEATURED_POOL[randomIndex];
+    return {
+      ...item,
+      image: resolveUrl(item.image)
+    };
+  });
+
   const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
   const rawFeatured = FEATURED_POOL[currentFeaturedIndex];
 
   // Resolve ImageKit URLs dynamically
-  const featured = {
+  const activeFeatured = {
     ...rawFeatured,
     image: resolveUrl(rawFeatured.image)
   };
@@ -75,7 +83,7 @@ function Index() {
 
   // Rotates images after 2 seconds (2000ms), wait for video ended for clips
   useEffect(() => {
-    if (featured.image.endsWith(".mp4")) {
+    if (activeFeatured.image.endsWith(".mp4")) {
       return;
     }
     const timer = setTimeout(() => {
@@ -83,38 +91,53 @@ function Index() {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [currentFeaturedIndex, featured.image]);
+  }, [currentFeaturedIndex, activeFeatured.image]);
 
   const [openItemState, setOpenItemState] = useState<GalleryItem | null>(null);
+  const [slideshowStartIndex, setSlideshowStartIndex] = useState(0);
 
-  const openItem = (item: GalleryItem) => {
-    setOpenItemState(item);
+  const openItem = (rowTitle: string, rowItems: MediaItem[], startIndex: number) => {
+    setOpenItemState({
+      id: rowTitle.toLowerCase().replace(/ /g, "_"),
+      title: rowTitle,
+      description: `Showcase of ${rowTitle}.`,
+      date: "2025",
+      aspect: "portrait",
+      image: rowItems[startIndex].url,
+      images: rowItems,
+      album: rowTitle
+    });
+    setSlideshowStartIndex(startIndex);
   };
 
   const openFeaturedSlideshow = () => {
-    // If the active featured item is a video, open the video_clips slideshow
-    if (featured.image.endsWith(".mp4")) {
-      const videoItem = albums
-        .find(a => a.slug === "videos")
-        ?.items.find(item => item.id === "video_clips");
-      if (videoItem) {
-        setOpenItemState(videoItem);
-        return;
+    // Find the media item in the database matching the activeFeatured.image
+    const allMediaItems = albums.flatMap(a => a.items.flatMap(occ => occ.images));
+    const filename = activeFeatured.image.split("/").pop();
+    const matchIndex = allMediaItems.findIndex(img => img.url.endsWith(filename || ""));
+
+    if (matchIndex !== -1) {
+      openItem("Featured Showcase", allMediaItems, matchIndex);
+    } else {
+      const first = albums[0]?.items[0]?.images;
+      if (first) {
+        openItem("Showcase", first, 0);
       }
     }
-
-    // Otherwise, open the matching occasion card
-    const matchingItem = albums
-      .flatMap(a => a.items)
-      .find(item => item.id === featured.id);
-    
-    if (matchingItem) {
-      setOpenItemState(matchingItem);
-    } else {
-      const first = albums[0]?.items[0];
-      if (first) setOpenItemState(first);
-    }
   };
+
+  // Construct 4 rich, long Netflix-like rows by flattening occasions inside category albums
+  const categoryRows = albums
+    .filter((a) => a.slug !== "recent")
+    .map((album) => {
+      const mediaItems = album.items.flatMap((occ) => occ.images);
+      return {
+        slug: album.slug,
+        title: album.title,
+        layout: album.layout,
+        items: mediaItems
+      };
+    });
 
   return (
     <div className="min-h-screen bg-background text-foreground animate-fade-in">
@@ -122,19 +145,21 @@ function Index() {
 
       <main>
         <Hero 
-          featured={featured} 
+          featured={activeFeatured} 
           onMoreInfo={openFeaturedSlideshow} 
           onVideoEnded={nextFeatured} 
         />
 
-        <div className="relative -mt-16 md:-mt-24 z-10">
-          {albums.map((a) => (
+        {/* Rows container pulled up to overlay transparently on top of full-screen background media */}
+        <div className="relative -mt-36 md:-mt-64 pb-20 z-20">
+          {categoryRows.map((row) => (
             <Row
-              key={a.slug}
-              album={a}
-              onOpen={openItem}
+              key={row.slug}
+              title={row.title}
+              items={row.items}
+              layout={row.layout}
+              onOpenCard={(idx) => openItem(row.title, row.items, idx)}
               isMobile={isMobile}
-              autoScroll={AUTO_SCROLL_ALBUMS.has(a.slug)}
             />
           ))}
         </div>
@@ -144,6 +169,7 @@ function Index() {
 
       <Slideshow
         item={openItemState}
+        startIndex={slideshowStartIndex}
         onClose={() => setOpenItemState(null)}
       />
     </div>
