@@ -11,8 +11,24 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// Hero slideshow pool — the 5 images + 2 videos the user explicitly selected
+// Hero slideshow pool — user selected images/videos; first two are pinned by user request
 const FEATURED_POOL = [
+  {
+    id: "garden_photoshoot_pink_saree_3",
+    title: "Garden Photoshoot",
+    description: "A beautiful afternoon among blooming flowers in a gorgeous pink saree.",
+    image: "/gallery/garden_photoshoot_pink_saree_3.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "evening_party_black_lehenga_4",
+    title: "Evening Party",
+    description: "Stunning in a black lehenga, ready to make every evening unforgettable.",
+    image: "/gallery/evening_party_black_lehenga_4.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
   {
     id: "candid_home_pink_top",
     title: "Candid Home",
@@ -54,7 +70,7 @@ const FEATURED_POOL = [
     tag: "Featured Showcase"
   },
   {
-    id: "video_clips_video",
+    id: "video_clips_video_2",
     title: "Moment in Motion",
     description: "A beautiful memory captured dynamically in video.",
     image: "/gallery/video_clips_video_2.mp4",
@@ -62,7 +78,7 @@ const FEATURED_POOL = [
     tag: "Featured Video"
   },
   {
-    id: "video_clips_video",
+    id: "video_clips_video_7",
     title: "Candid Laughter",
     description: "Capturing real emotion, smiles, and stories told in motion.",
     image: "/gallery/video_clips_video_7.mp4",

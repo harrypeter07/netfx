@@ -233,8 +233,20 @@ export function Slideshow({ item, onClose, startIndex = 0 }: SlideshowProps) {
                   aria-label={`Go to slide ${i + 1}`}
                 >
                   {it.type === "video" ? (
-                    <div className="h-full w-full bg-[#181818] flex items-center justify-center text-[10px] text-white/80 opacity-80 hover:opacity-100 font-semibold uppercase">
-                      Video
+                    <div className="relative h-full w-full overflow-hidden">
+                      <video
+                        src={it.url}
+                        className="h-full w-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                        muted
+                        playsInline
+                        preload="metadata"
+                      />
+                      {/* Play icon overlay */}
+                      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                        <div className="rounded-full bg-black/50 p-1">
+                          <svg viewBox="0 0 24 24" className="h-3 w-3 fill-white"><polygon points="5,3 19,12 5,21" /></svg>
+                        </div>
+                      </div>
                     </div>
                   ) : (
                     <img
