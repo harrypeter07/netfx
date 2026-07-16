@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Row, useIsMobile } from "@/components/Row";
@@ -60,16 +60,31 @@ function Index() {
   const albums = getAlbums();
   const isMobile = useIsMobile();
   
-  // Pick a random featured item from the user's highlighted pool on mount
-  const [featured] = useState(() => {
-    const randomIndex = Math.floor(Math.random() * FEATURED_POOL.length);
-    const item = FEATURED_POOL[randomIndex];
-    return {
-      ...item,
-      image: resolveUrl(item.image)
-    };
-  });
-  
+  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
+  const rawFeatured = FEATURED_POOL[currentFeaturedIndex];
+
+  // Resolve ImageKit URLs dynamically
+  const featured = {
+    ...rawFeatured,
+    image: resolveUrl(rawFeatured.image)
+  };
+
+  const nextFeatured = () => {
+    setCurrentFeaturedIndex((prev) => (prev + 1) % FEATURED_POOL.length);
+  };
+
+  // Rotates images after 2 seconds (2000ms), wait for video ended for clips
+  useEffect(() => {
+    if (featured.image.endsWith(".mp4")) {
+      return;
+    }
+    const timer = setTimeout(() => {
+      nextFeatured();
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [currentFeaturedIndex, featured.image]);
+
   const [openItemState, setOpenItemState] = useState<GalleryItem | null>(null);
 
   const openItem = (item: GalleryItem) => {
@@ -106,7 +121,11 @@ function Index() {
       <Nav />
 
       <main>
-        <Hero featured={featured} onMoreInfo={openFeaturedSlideshow} />
+        <Hero 
+          featured={featured} 
+          onMoreInfo={openFeaturedSlideshow} 
+          onVideoEnded={nextFeatured} 
+        />
 
         <div className="relative -mt-16 md:-mt-24 z-10">
           {albums.map((a) => (
