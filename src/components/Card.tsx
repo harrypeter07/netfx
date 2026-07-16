@@ -123,7 +123,7 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
               </div>
               <p className="truncate text-[11px] font-semibold text-white">{item.title}</p>
               <p className="text-[10px] capitalize" style={{ color: "var(--meta)" }}>
-                {item.outfit.replace(/_/g, " ")} · {item.type === "video" ? "Video" : "Photo"}
+                {(item.outfit ?? item.type === "video" ? "video clip" : "photo").replace(/_/g, " ")} · {item.type === "video" ? "Video" : "Photo"}
               </p>
             </motionChild.div>
           )}
