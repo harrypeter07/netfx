@@ -4,41 +4,13 @@ import type { Featured } from "@/lib/gallery";
 interface HeroProps {
   featured: Featured;
   onMoreInfo: () => void;
-  onVideoEnded?: () => void;
 }
 
-export function Hero({ featured, onMoreInfo, onVideoEnded }: HeroProps) {
-  const isVideo = featured.image.endsWith(".mp4");
-
+export function Hero({ featured, onMoreInfo }: HeroProps) {
   return (
-    <section className="relative isolate min-h-[70vh] sm:min-h-[85vh] w-full flex flex-col justify-end pb-12 pt-40 px-4 sm:px-12 overflow-hidden bg-black">
-      {/* Background Media Container */}
-      <div className="absolute inset-0 -z-10">
-        {isVideo ? (
-          <video
-            key={featured.image}
-            src={featured.image}
-            autoPlay
-            muted
-            playsInline
-            onEnded={onVideoEnded}
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <img
-            key={featured.image}
-            src={featured.image}
-            alt={featured.title}
-            className="h-full w-full object-cover object-[center_25%]"
-            fetchPriority="high"
-          />
-        )}
-
-        {/* Cinematic dark overlays to make text highly readable */}
-        <div className="absolute inset-0 bg-black/45 z-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/30 z-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent hidden md:block z-20" />
-      </div>
+    <section className="relative isolate min-h-[60vh] sm:min-h-[75vh] w-full flex flex-col justify-end pb-12 pt-40 px-4 sm:px-12 overflow-hidden">
+      {/* Dark overlay specifically for the text box on top of the global background */}
+      <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-background via-background/20 to-transparent -z-10" />
 
       {/* Hero Content Left Aligned */}
       <div className="relative z-30 max-w-xl w-full text-left">

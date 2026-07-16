@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "react-transition-group"; // Wait: we don't need react-transition-group, we can use framer-motion AnimatePresence
 import { motion as motionChild, AnimatePresence as FramerAnimatePresence } from "framer-motion";
 import { Heart, Info, Plus, Play } from "lucide-react";
 import type { MediaItem, Layout } from "@/lib/gallery";
@@ -58,17 +57,30 @@ export function Card({ item, layout, onOpen, isMobile }: CardProps) {
       >
         <div className={`relative ${aspect} w-full overflow-hidden`}>
           {!loaded && <div className="shimmer absolute inset-0 bg-[#333]" />}
-          <img
-            src={item.url}
-            alt={item.title}
-            loading="lazy"
-            onLoad={() => setLoaded(true)}
-            className="h-full w-full object-cover transition-opacity duration-300"
-            style={{ opacity: loaded ? 1 : 0 }}
-          />
+          {item.type === "video" ? (
+            <video
+              src={item.url}
+              autoPlay
+              loop
+              muted
+              playsInline
+              onLoadedData={() => setLoaded(true)}
+              className="h-full w-full object-cover transition-opacity duration-300"
+              style={{ opacity: loaded ? 1 : 0 }}
+            />
+          ) : (
+            <img
+              src={item.url}
+              alt={item.title}
+              loading="lazy"
+              onLoad={() => setLoaded(true)}
+              className="h-full w-full object-cover transition-opacity duration-300"
+              style={{ opacity: loaded ? 1 : 0 }}
+            />
+          )}
           {item.type === "video" && (
             <div className="absolute bottom-2 right-2 z-10 rounded-full bg-black/60 p-1 text-white border border-white/10">
-              <Play className="h-2.5 w-2.5 fill-white" />
+              <Play className="h-2.5 w-2.5 fill-white animate-pulse" />
             </div>
           )}
         </div>

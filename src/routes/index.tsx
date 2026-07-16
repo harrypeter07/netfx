@@ -111,7 +111,6 @@ function Index() {
   };
 
   const openFeaturedSlideshow = () => {
-    // Find the media item in the database matching the activeFeatured.image
     const allMediaItems = albums.flatMap(a => a.items.flatMap(occ => occ.images));
     const filename = activeFeatured.image.split("/").pop();
     const matchIndex = allMediaItems.findIndex(img => img.url.endsWith(filename || ""));
@@ -126,39 +125,67 @@ function Index() {
     }
   };
 
-  // Construct 4 rich, long Netflix-like rows by flattening occasions inside category albums
+  // Construct 4 rich rows by flattening occasions inside category albums
+  // Limit Video clips row to 3 cards, and other image rows to 5 cards max so Hero bg is visible
   const categoryRows = albums
     .filter((a) => a.slug !== "recent")
     .map((album) => {
       const mediaItems = album.items.flatMap((occ) => occ.images);
+      const maxCount = album.slug === "videos" ? 3 : 5;
+      const limitedItems = mediaItems.slice(0, maxCount);
+
       return {
         slug: album.slug,
         title: album.title,
         layout: album.layout,
-        items: mediaItems
+        items: limitedItems,
+        allMediaItems: mediaItems
       };
     });
 
   return (
-    <div className="min-h-screen bg-background text-foreground animate-fade-in">
+    <div className="min-h-screen bg-transparent text-foreground animate-fade-in relative">
+      {/* Global Fixed Background (autoplay loop muted video or image covering entire page) */}
+      <div className="fixed inset-0 -z-10 overflow-hidden bg-[#141414]">
+        {activeFeatured.image.endsWith(".mp4") ? (
+          <video
+            key={activeFeatured.image}
+            src={activeFeatured.image}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <img
+            key={activeFeatured.image}
+            src={activeFeatured.image}
+            alt=""
+            className="h-full w-full object-cover object-[center_25%]"
+          />
+        )}
+        {/* Cinematic dark overlay to ensure readability while displaying background */}
+        <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
+      </div>
+
       <Nav />
 
       <main>
         <Hero 
           featured={activeFeatured} 
           onMoreInfo={openFeaturedSlideshow} 
-          onVideoEnded={nextFeatured} 
         />
 
-        {/* Rows container pulled up to overlay transparently on top of full-screen background media */}
-        <div className="relative -mt-36 md:-mt-64 pb-20 z-20">
+        {/* Rows container pulled up to overlay transparently directly on top of the fixed background */}
+        <div className="relative -mt-36 md:-mt-64 pb-20 z-20 bg-transparent">
           {categoryRows.map((row) => (
             <Row
               key={row.slug}
               title={row.title}
               items={row.items}
               layout={row.layout}
-              onOpenCard={(idx) => openItem(row.title, row.items, idx)}
+              onOpenCard={(idx) => openItem(row.title, row.allMediaItems, idx)}
               isMobile={isMobile}
             />
           ))}
