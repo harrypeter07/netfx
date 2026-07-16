@@ -15,31 +15,31 @@ const AUTO_SCROLL_ALBUMS = new Set(["portraits", "candid", "travel"]);
 
 const FEATURED_POOL = [
   {
-    id: "wedding_festivities",
+    id: "evening_party_black_lehenga",
     title: "Wedding Festivities",
     description: "Capturing the elegance and grandeur of wedding celebrations, highlighting the beautiful traditional attire.",
-    image: "/gallery/wedding_festivities_black_gold_lehenga_1.jpeg",
+    image: "/gallery/evening_party_black_lehenga_1.jpeg",
     year: "2024",
     tag: "Featured Showcase"
   },
   {
-    id: "candid_home",
+    id: "candid_home_pink_top",
     title: "Candid Home",
     description: "Quiet, peaceful moments captured in the warmth and comfort of home.",
-    image: "/gallery/candid_home_pink_top_pearls_1.jpeg",
+    image: "/gallery/candid_home_pink_top_1.jpeg",
     year: "2025",
     tag: "Featured Showcase"
   },
   {
-    id: "casual_day_out",
+    id: "casual_outdoor_blue_kurti",
     title: "Casual Day Out",
     description: "Stepping out to enjoy the daylight in vibrant, simple, and comfortable outfits.",
-    image: "/gallery/casual_day_out_blue_printed_kurti_2.jpeg",
+    image: "/gallery/casual_outdoor_blue_kurti_2.jpeg",
     year: "2025",
     tag: "Featured Showcase"
   },
   {
-    id: "video_clips",
+    id: "video_clips_video",
     title: "Moment in Motion",
     description: "A beautiful memory captured dynamically in video.",
     image: "/gallery/video_clips_video_2.mp4",
@@ -47,7 +47,7 @@ const FEATURED_POOL = [
     tag: "Featured Video"
   },
   {
-    id: "video_clips",
+    id: "video_clips_video",
     title: "Candid Laughter",
     description: "Capturing real emotion, smiles, and stories told in motion.",
     image: "/gallery/video_clips_video_7.mp4",
