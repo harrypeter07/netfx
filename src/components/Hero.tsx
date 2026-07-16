@@ -13,8 +13,7 @@ export function Hero({ featured, onMoreInfo, onVideoEnded }: HeroProps) {
   return (
     <section className="relative isolate min-h-[70vh] sm:min-h-[85vh] w-full flex flex-col justify-end pb-12 pt-40 px-4 sm:px-12 overflow-hidden bg-black">
       {/* Background Media Container */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center bg-black">
-        {/* Main media (contained to show full portrait image/video) */}
+      <div className="absolute inset-0 -z-10">
         {isVideo ? (
           <video
             key={featured.image}
@@ -23,39 +22,17 @@ export function Hero({ featured, onMoreInfo, onVideoEnded }: HeroProps) {
             muted
             playsInline
             onEnded={onVideoEnded}
-            className="h-full w-full object-contain z-10"
+            className="h-full w-full object-cover"
           />
         ) : (
           <img
             key={featured.image}
             src={featured.image}
             alt={featured.title}
-            className="h-full w-full object-contain z-10"
+            className="h-full w-full object-cover object-[center_25%]"
             fetchPriority="high"
           />
         )}
-
-        {/* Blurred background media filling the letterbox spaces */}
-        <div className="absolute inset-0 overflow-hidden blur-3xl opacity-30 scale-110">
-          {isVideo ? (
-            <video
-              key={`bg-${featured.image}`}
-              src={featured.image}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <img
-              key={`bg-${featured.image}`}
-              src={featured.image}
-              alt=""
-              className="h-full w-full object-cover"
-            />
-          )}
-        </div>
 
         {/* Cinematic dark overlays to make text highly readable */}
         <div className="absolute inset-0 bg-black/45 z-20" />
