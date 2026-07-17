@@ -10,6 +10,10 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 import { AuthGate } from "../components/AuthGate";
 import { Loader } from "../components/Loader";
+import { startBackgroundPreload } from "../lib/preloader";
+
+// Start preloading the moment this module is imported — before any React render
+startBackgroundPreload();
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
