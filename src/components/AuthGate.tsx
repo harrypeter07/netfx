@@ -2,9 +2,6 @@ import { useState, useEffect, useRef } from "react";
 
 const PASSWORD = import.meta.env.VITE_GALLERY_PASSWORD ?? "chintu15";
 const SESSION_KEY = "gallery_auth_role";
-// Encode only the filename part so spaces become %20 — browsers need this for local public files
-const INTRO_FILENAME = encodeURIComponent("vidssave.com Netflix Intro (1080p) (Download) 720p.mp4");
-const INTRO_VIDEO = `/gallery/${INTRO_FILENAME}`;
 
 interface AuthGateProps {
   children: React.ReactNode;
@@ -12,14 +9,12 @@ interface AuthGateProps {
 
 export function AuthGate({ children }: AuthGateProps) {
   const [authed, setAuthed] = useState(false);
-  const [step, setStep] = useState<"role" | "password" | "intro">("role");
+  const [step, setStep] = useState<"role" | "password">("role");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [shake, setShake] = useState(false);
   const [reveal, setReveal] = useState(false);
-  const [introDone, setIntroDone] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const saved = sessionStorage.getItem(SESSION_KEY);
@@ -32,26 +27,7 @@ export function AuthGate({ children }: AuthGateProps) {
     }
   }, [step]);
 
-  // When intro video plays, force play on mobile and set fallback
-  useEffect(() => {
-    if (step !== "intro") return;
 
-    // Force play — required on mobile where autoplay needs a programmatic trigger
-    const vid = videoRef.current;
-    if (vid) {
-      vid.muted = true; // must be muted for mobile autoplay
-      vid.play().catch(() => {
-        // If play fails for any reason, skip straight to gallery
-        setAuthed(true);
-      });
-    }
-
-    // Fallback: if video fails to load or is too long, skip after 7s
-    const fallback = setTimeout(() => {
-      setAuthed(true);
-    }, 7000);
-    return () => clearTimeout(fallback);
-  }, [step]);
 
   const triggerShake = () => {
     setShake(true);
@@ -62,44 +38,13 @@ export function AuthGate({ children }: AuthGateProps) {
     e.preventDefault();
     if (password === PASSWORD) {
       sessionStorage.setItem(SESSION_KEY, "chintu");
-      setStep("intro"); // show Netflix intro before entering
+      setAuthed(true);
     } else {
       setError("Incorrect password.");
       setPassword("");
       triggerShake();
     }
   };
-
-  // ── Netflix-style intro screen ──────────────────────────────────────────
-  if (step === "intro") {
-    return (
-      <div
-        className="fixed inset-0 bg-black flex items-center justify-center overflow-hidden"
-        onClick={() => setAuthed(true)} // tap anywhere to skip
-      >
-        <video
-          ref={videoRef}
-          src={INTRO_VIDEO}
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          onEnded={() => setAuthed(true)}
-          onError={() => setAuthed(true)}
-          // object-cover fills screen top-to-bottom; landscape video zooms to fit
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "center center" }}
-        />
-        {/* Tap to skip hint */}
-        <p
-          className="absolute bottom-8 right-8 text-white/30 text-xs select-none"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          Tap anywhere to skip
-        </p>
-      </div>
-    );
-  }
 
   // ── Already authenticated ───────────────────────────────────────────────
   if (authed) return <>{children}</>;
