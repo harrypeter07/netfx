@@ -139,7 +139,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const [loadingDone, setLoadingDone] = useState(false);
+  const [loadingDone, setLoadingDone] = useState(() => {
+    if (typeof window !== "undefined") {
+      try {
+        return localStorage.getItem("initial_load_complete") === "true";
+      } catch (e) {
+        return false;
+      }
+    }
+    return false;
+  });
 
   useEffect(() => {
     // Ensure preloading starts on client mount

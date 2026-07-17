@@ -159,11 +159,29 @@ function Index() {
   // Interleave: insert one video after every 2 images
   const interleavedMedia = interleaveVideos(allImages, allVideos);
 
-  // Chunk into rows of 5
+  // Chunk into rows of 5 with hand-picked beautiful category names
+  const ROW_TITLES = [
+    "Trending Now",
+    "Golden Hour Glow",
+    "Candid Whispers",
+    "Traditional Grace",
+    "Urban Reverie",
+    "Slow Afternoons",
+    "Special Moments",
+    "Laughter in Motion",
+    "Vibrant Memories",
+    "Quiet Stillness",
+    "A Life in Frames",
+    "Captured Joy",
+    "Sunlit Whispers",
+    "Elegance and Poise",
+    "Everyday Magic"
+  ];
   const rows: { title: string; items: MediaItem[]; offset: number }[] = [];
   for (let i = 0; i < interleavedMedia.length; i += 5) {
     const chunk = interleavedMedia.slice(i, i + 5);
-    rows.push({ title: `Gallery · Row ${rows.length + 1}`, items: chunk, offset: i });
+    const title = ROW_TITLES[rows.length] ?? `Collection Row ${rows.length + 1}`;
+    rows.push({ title, items: chunk, offset: i });
   }
 
   return (

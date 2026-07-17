@@ -82,7 +82,7 @@ export function Row({ title, items, layout, onOpenCard, isMobile, autoScroll = f
 
         <motion.div
           ref={scrollerRef}
-          className="no-scrollbar touch-scroll flex gap-2 overflow-x-scroll px-4 md:gap-2.5 md:px-12"
+          className="no-scrollbar touch-scroll flex gap-2 overflow-x-scroll px-4 md:gap-2.5 md:px-12 py-16 -my-16"
           style={{
             scrollSnapType: isMobile && !autoScroll ? "x mandatory" : "none",
             scrollBehavior: autoScroll ? "auto" : "smooth",

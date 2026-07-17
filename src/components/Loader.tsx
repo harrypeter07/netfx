@@ -17,6 +17,14 @@ export function Loader({ onComplete }: LoaderProps) {
     if (calledRef.current) return;
     calledRef.current = true;
     setProgress(100);
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem("initial_load_complete", "true");
+      } catch (e) {
+        console.warn("Storage write failed", e);
+      }
+    }
+    // Fade out, THEN tell parent
     setTimeout(() => {
       setFadeOut(true);
       setTimeout(onComplete, 600);
