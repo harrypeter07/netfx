@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 const PASSWORD = import.meta.env.VITE_GALLERY_PASSWORD ?? "chintu15";
 const SESSION_KEY = "gallery_auth_role";
+const INTRO_VIDEO = "/gallery/vidssave.com Netflix Intro (1080p) (Download) 720p.mp4";
 
 interface AuthGateProps {
   children: React.ReactNode;
@@ -9,12 +10,14 @@ interface AuthGateProps {
 
 export function AuthGate({ children }: AuthGateProps) {
   const [authed, setAuthed] = useState(false);
-  const [step, setStep] = useState<"role" | "password">("role");
+  const [step, setStep] = useState<"role" | "password" | "intro">("role");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [shake, setShake] = useState(false);
   const [reveal, setReveal] = useState(false);
+  const [introDone, setIntroDone] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const saved = sessionStorage.getItem(SESSION_KEY);
@@ -27,6 +30,16 @@ export function AuthGate({ children }: AuthGateProps) {
     }
   }, [step]);
 
+  // When intro video plays, auto-enter after it ends
+  useEffect(() => {
+    if (step !== "intro") return;
+    // Fallback: if video fails or is very long, skip after 6s
+    const fallback = setTimeout(() => {
+      setAuthed(true);
+    }, 6500);
+    return () => clearTimeout(fallback);
+  }, [step]);
+
   const triggerShake = () => {
     setShake(true);
     setTimeout(() => setShake(false), 600);
@@ -36,7 +49,7 @@ export function AuthGate({ children }: AuthGateProps) {
     e.preventDefault();
     if (password === PASSWORD) {
       sessionStorage.setItem(SESSION_KEY, "chintu");
-      setAuthed(true);
+      setStep("intro"); // show Netflix intro before entering
     } else {
       setError("Incorrect password.");
       setPassword("");
@@ -44,8 +57,39 @@ export function AuthGate({ children }: AuthGateProps) {
     }
   };
 
+  // ── Netflix-style intro screen ──────────────────────────────────────────
+  if (step === "intro") {
+    return (
+      <div
+        className="fixed inset-0 bg-black flex items-center justify-center overflow-hidden"
+        onClick={() => setAuthed(true)} // tap anywhere to skip
+      >
+        <video
+          ref={videoRef}
+          src={INTRO_VIDEO}
+          autoPlay
+          muted={false}
+          playsInline
+          onEnded={() => setAuthed(true)}
+          // object-cover zooms landscape video to fill the screen top to bottom
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "center center" }}
+        />
+        {/* Tap to skip hint */}
+        <p
+          className="absolute bottom-8 right-8 text-white/30 text-xs select-none"
+          style={{ fontFamily: "'Inter', sans-serif" }}
+        >
+          Tap anywhere to skip
+        </p>
+      </div>
+    );
+  }
+
+  // ── Already authenticated ───────────────────────────────────────────────
   if (authed) return <>{children}</>;
 
+  // ── Auth screens ────────────────────────────────────────────────────────
   return (
     <div
       className="min-h-screen flex flex-col items-center bg-black"
@@ -53,7 +97,6 @@ export function AuthGate({ children }: AuthGateProps) {
     >
       {/* ── Top bar ── */}
       <div className="w-full flex items-center justify-between px-8 pt-6 pb-0">
-        {/* Brand logo — Netflix-style condensed bold */}
         <div className="flex-1" />
         <span
           style={{
@@ -75,7 +118,6 @@ export function AuthGate({ children }: AuthGateProps) {
               aria-label="Manage profiles"
               tabIndex={-1}
             >
-              {/* Pencil icon */}
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
                 <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
               </svg>
@@ -94,12 +136,10 @@ export function AuthGate({ children }: AuthGateProps) {
             Who's Watching?
           </h1>
 
-          {/* Single profile — Chintu */}
           <button
             onClick={() => { setStep("password"); setError(""); }}
             className="flex flex-col items-center gap-3 group focus:outline-none"
           >
-            {/* Avatar square */}
             <div
               className="relative overflow-hidden transition-all duration-200 group-hover:ring-4 group-hover:ring-white group-focus:ring-4 group-focus:ring-white"
               style={{
@@ -109,27 +149,12 @@ export function AuthGate({ children }: AuthGateProps) {
                 background: "linear-gradient(135deg, #2563EB 0%, #1e40af 40%, #1d4ed8 100%)",
               }}
             >
-              {/* Smiley face SVG — same style as Netflix */}
-              <svg
-                viewBox="0 0 100 100"
-                className="absolute inset-0 w-full h-full"
-                style={{ padding: "18%" }}
-              >
-                {/* Eyes */}
+              <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full" style={{ padding: "18%" }}>
                 <circle cx="35" cy="38" r="7" fill="white" />
                 <circle cx="65" cy="38" r="7" fill="white" />
-                {/* Smile */}
-                <path
-                  d="M 25 58 Q 50 80 75 58"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                />
+                <path d="M 25 58 Q 50 80 75 58" fill="none" stroke="white" strokeWidth="7" strokeLinecap="round" />
               </svg>
             </div>
-
-            {/* Name */}
             <span
               className="text-white/70 group-hover:text-white transition-colors font-medium"
               style={{ fontSize: "0.95rem", letterSpacing: "0.01em" }}
@@ -143,7 +168,6 @@ export function AuthGate({ children }: AuthGateProps) {
       {/* ── Password entry ── */}
       {step === "password" && (
         <div className="flex flex-col items-center flex-1 justify-center pb-20 w-full px-4">
-          {/* Mini profile */}
           <div className="flex flex-col items-center mb-8">
             <div
               className="relative overflow-hidden mb-3"
