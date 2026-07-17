@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from "react";
 
 const PASSWORD = import.meta.env.VITE_GALLERY_PASSWORD ?? "chintu15";
 const SESSION_KEY = "gallery_auth_role";
-const INTRO_VIDEO = "/gallery/vidssave.com Netflix Intro (1080p) (Download) 720p.mp4";
+// Encode only the filename part so spaces become %20 — browsers need this for local public files
+const INTRO_FILENAME = encodeURIComponent("vidssave.com Netflix Intro (1080p) (Download) 720p.mp4");
+const INTRO_VIDEO = `/gallery/${INTRO_FILENAME}`;
 
 interface AuthGateProps {
   children: React.ReactNode;
@@ -30,13 +32,24 @@ export function AuthGate({ children }: AuthGateProps) {
     }
   }, [step]);
 
-  // When intro video plays, auto-enter after it ends
+  // When intro video plays, force play on mobile and set fallback
   useEffect(() => {
     if (step !== "intro") return;
-    // Fallback: if video fails or is very long, skip after 6s
+
+    // Force play — required on mobile where autoplay needs a programmatic trigger
+    const vid = videoRef.current;
+    if (vid) {
+      vid.muted = true; // must be muted for mobile autoplay
+      vid.play().catch(() => {
+        // If play fails for any reason, skip straight to gallery
+        setAuthed(true);
+      });
+    }
+
+    // Fallback: if video fails to load or is too long, skip after 7s
     const fallback = setTimeout(() => {
       setAuthed(true);
-    }, 6500);
+    }, 7000);
     return () => clearTimeout(fallback);
   }, [step]);
 
@@ -68,10 +81,12 @@ export function AuthGate({ children }: AuthGateProps) {
           ref={videoRef}
           src={INTRO_VIDEO}
           autoPlay
-          muted={false}
+          muted
           playsInline
+          preload="auto"
           onEnded={() => setAuthed(true)}
-          // object-cover zooms landscape video to fill the screen top to bottom
+          onError={() => setAuthed(true)}
+          // object-cover fills screen top-to-bottom; landscape video zooms to fit
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center center" }}
         />
