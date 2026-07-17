@@ -141,6 +141,11 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const [loadingDone, setLoadingDone] = useState(false);
 
+  useEffect(() => {
+    // Ensure preloading starts on client mount
+    startBackgroundPreload();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Loader runs first — preloads all assets, then fades out to reveal auth */}

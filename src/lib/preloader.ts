@@ -51,6 +51,7 @@ function notifyListeners() {
 }
 
 export function startBackgroundPreload() {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
   if (_started) return;
   _started = true;
 
