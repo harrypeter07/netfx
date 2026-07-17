@@ -22,18 +22,18 @@ const FEATURED_POOL = [
     tag: "Featured Showcase"
   },
   {
-    id: "evening_party_black_lehenga_4",
-    title: "Evening Party",
-    description: "Stunning in a black lehenga, ready to make every evening unforgettable.",
-    image: "/gallery/evening_party_black_lehenga_4.jpeg",
-    year: "2025",
-    tag: "Featured Showcase"
-  },
-  {
     id: "candid_home_pink_top",
     title: "Candid Home",
     description: "Quiet, peaceful moments captured in the warmth and comfort of home.",
     image: "/gallery/candid_home_pink_top_1.jpeg",
+    year: "2025",
+    tag: "Featured Showcase"
+  },
+  {
+    id: "evening_party_black_lehenga_4",
+    title: "Evening Party",
+    description: "Stunning in a black lehenga, ready to make every evening unforgettable.",
+    image: "/gallery/evening_party_black_lehenga_4.jpeg",
     year: "2025",
     tag: "Featured Showcase"
   },
