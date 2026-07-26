@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { verifyPasswordServerFn, checkAuthServerFn } from "../lib/auth-server";
 
 interface AuthGateProps {
