@@ -1,7 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-
-const PASSWORD = import.meta.env.VITE_GALLERY_PASSWORD ?? "chintu15";
-const SESSION_KEY = "gallery_auth_role";
+import { verifyPasswordServerFn, checkAuthServerFn } from "../lib/auth-server";
 
 interface AuthGateProps {
   children: React.ReactNode;
@@ -9,6 +6,8 @@ interface AuthGateProps {
 
 export function AuthGate({ children }: AuthGateProps) {
   const [authed, setAuthed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [checking, setChecking] = useState(true);
   const [step, setStep] = useState<"role" | "password">("role");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,9 +15,25 @@ export function AuthGate({ children }: AuthGateProps) {
   const [reveal, setReveal] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Check HTTP-Only cookie status on server via RPC
   useEffect(() => {
-    const saved = sessionStorage.getItem(SESSION_KEY);
-    if (saved === "chintu") setAuthed(true);
+    let active = true;
+    checkAuthServerFn()
+      .then((res) => {
+        if (active && res.authenticated) {
+          setAuthed(true);
+        }
+      })
+      .catch((err) => {
+        console.error("Auth check failed:", err);
+      })
+      .finally(() => {
+        if (active) setChecking(false);
+      });
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -27,22 +42,33 @@ export function AuthGate({ children }: AuthGateProps) {
     }
   }, [step]);
 
-
-
   const triggerShake = () => {
     setShake(true);
     setTimeout(() => setShake(false), 600);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === PASSWORD) {
-      sessionStorage.setItem(SESSION_KEY, "chintu");
-      setAuthed(true);
-    } else {
-      setError("Incorrect password.");
+    if (!password || loading) return;
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await verifyPasswordServerFn({ data: { password } });
+      if (res.success) {
+        setAuthed(true);
+      } else {
+        setError(res.error || "Incorrect password.");
+        setPassword("");
+        triggerShake();
+      }
+    } catch (err) {
+      console.error("Login request failed:", err);
+      setError("Failed to verify password. Please try again.");
       setPassword("");
       triggerShake();
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -194,15 +220,14 @@ export function AuthGate({ children }: AuthGateProps) {
 
             <button
               type="submit"
-              disabled={!password}
-              className="w-full py-3.5 rounded text-sm font-bold text-white transition-all"
+              disabled={!password || loading}
+              className="w-full py-3.5 rounded text-sm font-bold text-white transition-all disabled:opacity-50"
               style={{
                 background: "#E50914",
-                opacity: password ? 1 : 0.5,
                 letterSpacing: "0.05em",
               }}
             >
-              SIGN IN
+              {loading ? "SIGNING IN..." : "SIGN IN"}
             </button>
 
             <button
