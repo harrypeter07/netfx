@@ -10,10 +10,8 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 import { AuthGate } from "../components/AuthGate";
 import { Loader } from "../components/Loader";
+// Preloader module imported (DO NOT call startBackgroundPreload at module level!)
 import { startBackgroundPreload } from "../lib/preloader";
-
-// Start preloading the moment this module is imported — before any React render
-startBackgroundPreload();
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -139,6 +137,17 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AuthGate>
+        <AuthenticatedContent />
+      </AuthGate>
+    </QueryClientProvider>
+  );
+}
+
+function AuthenticatedContent() {
   const [loadingDone, setLoadingDone] = useState(() => {
     if (typeof window !== "undefined") {
       try {
@@ -151,20 +160,14 @@ function RootComponent() {
   });
 
   useEffect(() => {
-    // Ensure preloading starts on client mount
+    // Preloading ONLY starts after authentication has succeeded!
     startBackgroundPreload();
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {/* Loader runs first — preloads all assets, then fades out to reveal auth */}
+    <>
       {!loadingDone && <Loader onComplete={() => setLoadingDone(true)} />}
-      {loadingDone && (
-        <AuthGate>
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-        </AuthGate>
-      )}
-    </QueryClientProvider>
+      {loadingDone && <Outlet />}
+    </>
   );
 }
